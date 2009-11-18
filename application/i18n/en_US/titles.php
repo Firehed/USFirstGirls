@@ -1,5 +1,8 @@
 <?php
 $lang = array(
+	'admin' => array(
+		'index' => 'Admin Panel | USFirstGirls',
+	),
 	'blog' => array(
 		'index' => 'USFirstGirls Blog',
 		'post' => '%s | USFirstGirls Blog'
