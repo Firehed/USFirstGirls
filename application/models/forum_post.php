@@ -82,4 +82,5 @@ class Forum_Post_Model extends ORM {
 		}
 		return $body;
 	} // function setBody
+
 } // class Forum_Post_Model

@@ -96,7 +96,7 @@ class User_Model extends ORM {
 	} // function setEmail
 	
 	public function setPassword($password) {
-		if (!preg_match('/(?=.*[a-zA-Z])(?=.*[0-9]).{6,}/', $password)) {
+		if (!strlen($password) < 6) {
 			throw new ValidationException('models.user.password.invalid');
 		}
 
