@@ -76,12 +76,17 @@
 			#forums nav {
 				margin-bottom: 10px;
 			}
-			#forums nav a {
-				color: #000;
-				font-size:12pt;
-				margin-bottom: 10px;
-			}
+				#forums nav a {
+					color: #000;
+					font-size:12pt;
+					margin-bottom: 10px;
+				}
 
+			#forumHeader {
+				border-bottom:1px solid #999;
+				overflow:auto;
+				margin-bottom:10px;
+			}
 			.forum,
 			.forumTopic,
 			.forumPost {
@@ -89,7 +94,7 @@
 			}
 				.forum h2,
 				.forumTopic h2 {
-					font-size: 12pt;
+					font-size: 11pt;
 				}
 					.forum h2 a,
 					.forumTopic h2 a {
@@ -117,6 +122,10 @@
 			.pagination a {
 				font-size: 9pt!important;
 			}
+			
+			#bottom {
+				margin-top: 10px;
+			}
 		</style>
 		<script>
 			// HTML5 "shiv"
@@ -131,7 +140,7 @@
 	<body>
 		<header id="top" class="container_12">
 			<img src="img/FIRSTlogoR_color_rgb_140.gif" width="140" height="122" alt="US FIRST Logo" class="grid_2" />
-			<h1 class="grid_5"><a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>">Welcome to USFirstGirls.org</a></h1>
+			<h1 class="grid_5"><a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>"><?php echo Kohana::lang('site.home.title'); ?></a></h1>
 			<nav class="grid_5">
 				<ul>
 					<li><a href=""        title="<?php echo Kohana::lang('site.nav.home.title');    ?>"><?php echo Kohana::lang('site.nav.home.anchor');    ?></a></li>
@@ -167,6 +176,16 @@
 	
 		<footer id="bottom" class="container_12">
 			<p class="grid_3">© USFirstGirls.org</p>
+			<nav class="grid_3">
+				<ul>
+					<li><a href="http://www.usfirst.org" title="FIRST Robotics official site" target="_blank">US FIRST Official Site</a></li>
+				</ul>
+			</nav>
+			<nav class="grid_3">
+				<ul>
+					<li><a href="http://www.usfirst.org" title="FIRST Robotics official site" target="_blank">US FIRST Official Site</a></li>
+				</ul>
+			</nav>
 			<nav class="grid_3">
 				<ul>
 					<li><a href="http://www.usfirst.org" title="FIRST Robotics official site" target="_blank">US FIRST Official Site</a></li>

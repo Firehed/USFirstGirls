@@ -46,6 +46,10 @@ class Forum_Controller extends Template_Controller {
 	} // function newTopic
 	
 	protected function reply($topicId) {
+		if (!$this->user) {
+			$this->error(Kohana::lang('errors.forum.reply'));
+			return;
+		}
 		$post = new Forum_Post_Model;
 		$post->user_id        = $this->user->id;
 		$post->body           = $this->input->post('body');

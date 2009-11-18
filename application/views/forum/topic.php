@@ -1,17 +1,19 @@
-<nav class="grid_8">
-	<a href="forum" title="<?php echo Kohana::lang('site.nav.forums.title'); ?>"><?php echo Kohana::lang('site.nav.forums.anchor'); ?></a> &raquo;
-	<a href="forum/view/<?php echo $topic->forum_id; ?>"><?php echo $topic->forum->name; ?></a> &raquo;
-	<a href="forum/topic/<?php echo $topic->id; ?>"><?php echo $topic->title; ?></a>
-	<?php echo $pagination; ?>
-</nav>
-<nav class="grid_4">
-	<?php if ($this->user): ?>
-	<a href="#foo">Reply to this topic</a>	
-	<?php else: ?>
-	<a href="signin"  title="<?php echo Kohana::lang('site.nav.signin.title');  ?>"><?php echo Kohana::lang('site.nav.signin.anchor');  ?></a> or 
-	<a href="signup"  title="<?php echo Kohana::lang('site.nav.signup.title');  ?>"><?php echo Kohana::lang('site.nav.signup.anchor');  ?></a> to reply.
-	<?php endif; ?>
-</nav>
+<header id="forumHeader" class="grid_12">
+	<nav class="grid_8 alpha">
+		<a href="forum" title="<?php echo Kohana::lang('site.nav.forums.title'); ?>"><?php echo Kohana::lang('site.nav.forums.anchor'); ?></a> &raquo;
+		<a href="forum/view/<?php echo $topic->forum_id; ?>"><?php echo $topic->forum->name; ?></a> &raquo;
+		<a href="forum/topic/<?php echo $topic->id; ?>"><?php echo $topic->title; ?></a>
+		<?php echo $pagination; ?>
+	</nav>
+	<nav class="grid_4 omega">
+		<?php if ($this->user): ?>
+		<a href="#foo">Reply to this topic</a>	
+		<?php else: ?>
+		<a href="signin"  title="<?php echo Kohana::lang('site.nav.signin.title');  ?>"><?php echo Kohana::lang('site.nav.signin.anchor');  ?></a> or 
+		<a href="signup"  title="<?php echo Kohana::lang('site.nav.signup.title');  ?>"><?php echo Kohana::lang('site.nav.signup.anchor');  ?></a> to reply.
+		<?php endif; ?>
+	</nav>
+</header>
 
 
 <ul id="forumPosts" class="grid_9">
@@ -31,6 +33,7 @@
 	<!-- This space reserved... -->
 </div> <!-- div .grid_3 -->
 
+<?php if ($this->user): ?>
 <form action="<?php echo url::current(); ?>" method="post" class="grid_7 prefix_2 suffix_3">
 	<p>Reply to this topic:</p>
 	<fieldset>
@@ -43,3 +46,5 @@
 		
 	</fieldset>
 </form>
+<?php endif; ?>
+

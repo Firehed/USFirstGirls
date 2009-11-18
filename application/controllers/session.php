@@ -7,7 +7,7 @@ class Session_Controller extends Template_Controller {
 				url::redirect($this->session->get_once('referrer'), '');
 			}
 			else {
-				$this->error(Kohana::lang('errors.session.login'));
+				$this->error(Kohana::lang('errors.session.signin'));
 			}
 		}
 	} // function singin
@@ -26,7 +26,7 @@ class Session_Controller extends Template_Controller {
 			
 			if ($user->add(ORM::factory('role', 'login')) AND $user->save()) {
 				$this->auth->login($this->input->post('username'), $this->input->post('password'));
-				$this->message(Kohana::lang('messages.session.register'));
+				$this->message(Kohana::lang('messages.session.signup'));
 			}
 			else {
 				$this->error($user->exceptions);
