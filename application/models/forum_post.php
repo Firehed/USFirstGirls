@@ -1,4 +1,20 @@
 <?php
+/*
+CREATE TABLE `forum_posts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `forum_topic_id` int(11) unsigned DEFAULT NULL,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `body` text,
+  `timeCreated` int(11) DEFAULT NULL,
+  `timeEdited` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `forum_topic_id` (`forum_topic_id`),
+  CONSTRAINT `forum_posts_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `forum_posts_ibfk_3` FOREIGN KEY (`forum_topic_id`) REFERENCES `forum_topics` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+*/
+
 class Forum_Post_Model extends ORM {
 	protected $belongs_to = array(
 		'forum_topic',
