@@ -30,4 +30,28 @@ class Blog_Post_Model extends ORM {
 		return parent::save();
 	} // function save
 	
+	public function setBody($body) {
+		$body = trim($body);
+		if (!$body) {
+			throw new ValidationException('models.blog_post.body');
+		}
+		return $body;
+	} // function setBody
+	
+	public function setSummary($summary) {
+		$summary = trim($summary);
+		if (!$summary) {
+			throw new ValidationException('models.blog_post.summary');
+		}
+		return $summary;
+	} // function setSummary
+	
+	public function setTitle($title) {
+		$title = trim($title);
+		if (!$title) {
+			throw new ValidationException('models.blog_post.title');
+		}
+		return $title;
+	} // function setTitle
+	
 } // class Blog_Post_Model

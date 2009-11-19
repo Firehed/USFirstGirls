@@ -1,7 +1,11 @@
 <?php
 $lang = array(
 	'admin' => array(
-		'index' => 'Admin Panel | USFirstGirls',
+		'index' => 'Home - Admin Panel | USFirstGirls',
+		'user'  => '%s - Admin Panel | USFirstGirls',
+		'users' => 'Users - Admin Panel | USFirstGirls',
+		'forum' => 'Forums - Admin Panel | USFirstGirls',
+		'blogs' => 'Blogs - Admin Panel | USFirstGirls',
 	),
 	'blog' => array(
 		'index' => 'USFirstGirls Blog',

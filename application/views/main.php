@@ -139,8 +139,9 @@
 	</head>
 	<body>
 		<header id="top" class="container_12">
-			<img src="img/FIRSTlogoR_color_rgb_140.gif" width="140" height="122" alt="US FIRST Logo" class="grid_2" />
-			<h1 class="grid_5"><a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>"><?php echo Kohana::lang('site.home.title'); ?></a></h1>
+			<!-- <img src="img/FIRSTlogoR_color_rgb_140.gif" width="140" height="122" alt="US FIRST Logo" class="grid_2" /> -->
+			<img src="img/FIRSTLOGOV1.gif" width="220" height="147" alt="FIRSTLOGOV1" class="grid_3"/>
+			<h1 class="grid_4"><a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>"><?php echo Kohana::lang('site.home.title'); ?></a></h1>
 			<nav class="grid_5">
 				<ul>
 					<li><a href=""        title="<?php echo Kohana::lang('site.nav.home.title');    ?>"><?php echo Kohana::lang('site.nav.home.anchor');    ?></a></li>

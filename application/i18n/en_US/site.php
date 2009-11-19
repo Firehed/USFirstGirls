@@ -1,5 +1,39 @@
 <?php
 $lang = array(
+	'admin' => array(
+		'blogs' => array(
+			'anchor'     => 'Blog Posts',
+			'newBody'    => 'Post body',
+			'newButton'  => 'Create post',
+			'newSummary' => 'Post summary',
+			'newTitle'   => 'Post title',
+			'title'      => 'Manage blog posts',
+		),
+		'forums' => array(
+			'anchor'    => 'Forums',
+			'newButton' => 'Create new forum',
+			'newDesc'   => 'New forum description',
+			'newName'   => 'New forum name',
+			'title'     => 'Manage forums',
+		),
+		'index' => array(
+			'anchor' => 'Admin home',
+			'title'  => 'Admin home page',
+		),
+		'user' => array(
+			'button'     => 'Update user',
+			'email'      => 'Email',
+			'last_login' => 'Last logged in',
+			'logins'     => 'Login count',
+			'username'   => 'Username',
+		),
+		'users' => array(
+			'anchor' => 'Users',
+			'title'  => 'Manage users',
+			'search' => 'Username or email address',
+			'submit' => 'Search for user',
+		),
+	),
 	'home' => array(
 		'title' => 'Welcome to USFirstGirls.org',
 	),

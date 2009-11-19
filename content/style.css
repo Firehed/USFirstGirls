@@ -21,11 +21,13 @@ header,footer,article,section,aside,nav{display:block;}
 /* @end */
 
 /* @group Forms and DLs */
-label{cursor:pointer;}
+label,button{cursor:pointer;}
 label,input[type=text],input[type=password],input[type=file],input[type=checkbox],select,textarea,dd,dt{margin-bottom:1em;}
 label,dt{display:block;clear:left;float:left;width:40%;text-align:right;padding-right:5%}
 label:after,dt:after{content:":";}
-input[type=text],input[type=password],input[type=file],input[type=checkbox],select,textarea,dd{float:left;width:50%}
+input[type=text],input[type=password],input[type=file],select,textarea,dd{float:left;width:50%}
+input[type=checkbox]{float:left;}
+button{margin-left:45%;float:left;clear:left;}
 textarea{height:10em;resize:vertical;}
 dl,fieldset{overflow:auto;}
 /* @end */
@@ -99,26 +101,18 @@ dl,fieldset{overflow:auto;}
 .container_12 .pull_11{left:-880px;}
 
 
-
-
-
-
-
 table{width:100%;}
 input,textarea{border:1px solid #999;}
 tbody tr:nth-child(odd){background-color:#EEE;}
 tbody tr:nth-child(even){background-color:#BBB;}
 td,th{padding:5px;}
 th{font-weight:bold;}
-input[type=submit]{margin-left:-99999px;}
 
-/*For future use*/
-form.columns .button {
-	width: auto !important;
-	margin-left: 40%;
-	float: left;
-}
-form.columns .button.inline {
-	margin-left: 10px !important;
-	clear: none;
+button {
+	background-color:#003974;
+	background-color:#033B90;
+	color:#FFF;
+	padding:5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }

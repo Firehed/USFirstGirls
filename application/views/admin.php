@@ -1,8 +1,8 @@
 <nav class="grid_2">
 	<ul>
-		<?php if ($this->_allowed('user')): ?><li>Users</li><?php endif; ?>
-		<?php if ($this->_allowed('forum')): ?><li>Forums</li><?php endif; ?>
-		<?php if ($this->_allowed('blog')): ?><li>Blog</li><?php endif; ?>
+	<?php foreach ($this->pages as $page): ?>
+		<?php if ($this->_allowed($page)):  ?><li><a href="admin/<?php echo $page; ?>"  title="<?php echo Kohana::lang("site.admin.$page.title");  ?>"><?php echo Kohana::lang("site.admin.$page.anchor");  ?></a></li><?php endif; ?>
+	<?php endforeach; ?>
 	</ul>
 </nav>
 <div id="adminContent" class="grid_10">
