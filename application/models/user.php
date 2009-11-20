@@ -96,7 +96,7 @@ class User_Model extends ORM {
 	} // function setEmail
 	
 	public function setPassword($password) {
-		if (!strlen($password) < 6) {
+		if (strlen($password) < 6) {
 			throw new ValidationException('models.user.password.invalid');
 		}
 
