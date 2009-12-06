@@ -1,8 +1,8 @@
 <?php
 define('IN_PRODUCTION', FALSE);
-$kohana_application = '../application';
-$kohana_modules = '../modules';
-$kohana_system = '../system';
+$kohana_application = '../private/application';
+$kohana_modules = '../private/modules';
+$kohana_system = '../private/system';
 error_reporting(E_ALL & ~E_STRICT);
 ini_set('display_errors', TRUE);
 define('EXT', '.php');
