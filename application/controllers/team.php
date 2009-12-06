@@ -1,0 +1,36 @@
+<?php
+class Team_Controller extends Template_Controller {
+	public function index() {
+		if (!$this->user) {
+			$this->error(Kohana::lang('errors.team.index'));
+			url::redirect('');
+		}
+		
+		$this->tpl->team = $this->user->team;
+	} // function index
+
+	public function edit() {
+		if (!$this->user) {
+			$this->error(Kohana::lang('errors.team.edit'));
+			url::redirect('');
+		}
+		
+		$team = $this->tpl->team = $this->user->team;
+		
+		if (form::valid()) {
+			$team->recruited  = $this->input->post('recruited');
+			$team->methods    = $this->input->post('methods');
+			if ($team->save()) {
+				url::redirect('team');
+			}
+			else {
+				$this->error($team->exceptions);
+			}
+		}
+	} // function edit
+	
+	public function all() {
+		$this->tpl->teams = ORM::factory('team')->find_all();
+	} // function all
+	
+} // class Team_Controller

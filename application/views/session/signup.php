@@ -8,6 +8,9 @@
 		<label for="email"><?php echo Kohana::lang('site.session.email'); ?></label>
 		<input type="text" name="email" id="email" />
 		
+		<label for="teamNumber"><?php echo Kohana::lang('site.session.teamNumber'); ?></label>
+		<input type="text" name="teamNumber" id="teamNumber" />
+		
 		<label for="password"><?php echo Kohana::lang('site.session.password'); ?></label>
 		<input type="password" name="password" id="password" />
 		

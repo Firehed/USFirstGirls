@@ -20,8 +20,17 @@ $lang = array(
 	'home' => array(
 		'index' => 'USFirstGirls',
 	),
+	'profile' => array(
+		'edit'  => 'Editing your profile | USFirstGirls',
+		'index' => 'Viewing your profile | USFirstGirls',
+	),
 	'session' => array(
 		'signin' => 'Sign in | USFirstGirls',
 		'signup' => 'Sign up | USFirstGirls',
+	),
+	'team' => array(
+		'all'   => 'All registered teams | USFirstGirls',
+		'edit'  => 'Editing My Team\'s Profile | USFirstGirls',
+		'index' => 'My Team\'s Profile | USFirstGirls',
 	),
 );

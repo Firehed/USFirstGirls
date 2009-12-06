@@ -5,6 +5,7 @@
  * Sets the default route to "welcome"
  */
 $config['_default'] = 'home/index';
+$config['teams']    = 'team/all';
 $config['signin']   = 'session/signin';
 $config['signout']  = 'session/signout';
 $config['signup']   = 'session/signup';

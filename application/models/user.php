@@ -67,6 +67,14 @@ class User_Model extends ORM {
 		'user_tokens', // Auth
 	);
 	
+	protected $belongs_to = array(
+		'team'
+	);
+	
+	protected $foreign_key = array(
+		'team' => 'team_number'
+	);
+	
 	// No deleting users.
 	public function delete() {
 		return false;

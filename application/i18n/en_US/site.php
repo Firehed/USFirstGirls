@@ -50,6 +50,10 @@ $lang = array(
 			'anchor' => 'Home',
 			'title' => 'USFirstGirls Home Page',
 		),
+		'profile' => array(
+			'anchor' => 'Profile',
+			'title' => 'Your Profile',
+		),
 		'signin' => array(
 			'anchor' => 'Sign In',
 			'title' => 'Sign in to USFirstGirls',
@@ -64,13 +68,13 @@ $lang = array(
 		),
 	),
 	'session' => array(
-		'email'         => 'Email',
+		'email'         => 'Email Address',
 		'password'      => 'Password',
-		'remember'      => 'Remember me?',
 		'signin'        => 'Sign In',
 		'signinreason'  => '<p>In order to post in the forums, you must sign in.</p>',
 		'signup'        => 'Sign Up',
 		'signupreason'  => '<p>In order to post in the forums, you need to sign up.  We won\'t spam you or anything like that.</p>',
+		'teamNumber'    => 'FIRST Team Number',
 		'usernameemail' => 'Username/Email',
 		'username'      => 'Username',
 		
