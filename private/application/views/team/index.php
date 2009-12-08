@@ -9,5 +9,8 @@
 	<dd><?php echo $team->methods; ?></dd>
 </dl>
 
+<ul>
+<li><a href="profile/edit">Edit your profile</a></li>
+<li><a href="team/edit">Edit your team's profile</a></li>
+</ul>
 
-<a href="team/edit">Edit profile</a>

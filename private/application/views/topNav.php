@@ -14,7 +14,7 @@ $loggedOutLinks = array(
 );
 
 foreach ($alwaysLinks as $key => $url) {
-	if (url::current() == $url OR ($url == '' AND url::current() == 'home/index' /*routing hack*/)) {
+	if (url::current() == $url OR (url::current() == 'home/index' AND $url == ''  /*routing hack*/)) {
 		?><li><span><?php echo Kohana::lang("site.nav.$key.anchor"); ?></span></li><?php
 	}
 	else {

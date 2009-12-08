@@ -18,6 +18,9 @@ class Team_Controller extends Template_Controller {
 		$team = $this->tpl->team = $this->user->team;
 		
 		if (form::valid()) {
+			if (!$team->loaded) {
+				$team->number = $this->user->team_number;
+			}
 			$team->recruited  = $this->input->post('recruited');
 			$team->methods    = $this->input->post('methods');
 			if ($team->save()) {
