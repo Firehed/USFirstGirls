@@ -3,6 +3,7 @@ $lang = array(
 	'admin' => array(
 		'blogpost' =>  array(
 			'created' => 'Blog post created!',
+			'saved'   => 'Blog post saved!',
 		),
 		'user' =>  array(
 			'updated' => 'User successfully updated!',

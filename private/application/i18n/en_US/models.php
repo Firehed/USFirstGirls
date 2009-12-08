@@ -2,6 +2,12 @@
 $lang = array(
 	'blog_post' => array(
 		'body'    => 'Surely you have <em>something</em> to say - the blog post needs a body!',
+		'permalink' => array(
+			'blank'    => 'The post permalink cannot be blank.',
+			'invalid'  => 'That is not a valid permalink (letters, numbers, and dashes only).',
+			'inuse'    => 'That permalink is already used by another post.',
+			'nochange' => 'You cannot change a permalink after a post has been published.',
+		),
 		'title'   => 'You need to give the blog post a title.',
 		'summary' => 'You need to give the blog post a summary.',
 	),

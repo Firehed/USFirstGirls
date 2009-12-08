@@ -76,37 +76,16 @@ dl,fieldset{overflow:auto;}
 .container_12 .suffix_10{padding-right:800px;}
 .container_12 .suffix_11{padding-right:880px;}
 
-.container_12 .push_1{left:80px;}
-.container_12 .push_2{left:160px;}
-.container_12 .push_3{left:240px;}
-.container_12 .push_4{left:320px;}
-.container_12 .push_5{left:400px;}
-.container_12 .push_6{left:480px;}
-.container_12 .push_7{left:560px;}
-.container_12 .push_8{left:640px;}
-.container_12 .push_9{left:720px;}
-.container_12 .push_10{left:800px;}
-.container_12 .push_11{left:880px;}
-
-.container_12 .pull_1{left:-80px;}
-.container_12 .pull_2{left:-160px;}
-.container_12 .pull_3{left:-240px;}
-.container_12 .pull_4{left:-320px;}
-.container_12 .pull_5{left:-400px;}
-.container_12 .pull_6{left:-480px;}
-.container_12 .pull_7{left:-560px;}
-.container_12 .pull_8{left:-640px;}
-.container_12 .pull_9{left:-720px;}
-.container_12 .pull_10{left:-800px;}
-.container_12 .pull_11{left:-880px;}
-
 
 table{width:100%;}
 input,textarea{border:1px solid #999;}
+input:focus,textarea:focus{border-color:#000;}
+thead th{border-bottom: 2px solid #888;}
 tbody tr:nth-child(odd){background-color:#EEE;}
-tbody tr:nth-child(even){background-color:#BBB;}
+tbody tr:nth-child(even){background-color:#DDD;}
 td,th{padding:5px;}
 th{font-weight:bold;}
+
 
 button {
 	background-color:#003974;

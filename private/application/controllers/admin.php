@@ -5,16 +5,17 @@ class Admin_Controller extends Template_Controller {
 	
 	// Permissions for the pages
 	protected static $actions = array(
-		'blog'   => array('admin','blogger'),
-		'blogs'  => array('admin','blogger'),
-		'forums' => array('admin'),
-		'index'  => array('admin','blogger'),
-		'user'   => array('admin'),
-		'users'  => array('admin'),
+		'blog'        => array('admin','blogger'),
+		'blogs'       => array('admin','blogger'),
+		'forums'      => array('admin'),
+		'index'       => array('admin','blogger'),
+		'newBlogPost' => array('admin','blogger'),
+		'user'        => array('admin'),
+		'users'       => array('admin'),
 	);
 
 	// Sidebar is populated with these
-	public $pages = array('index', 'blogs', 'forums', 'users'); 
+	public $pages = array('index', 'blogs', 'newBlogPost','forums', 'users'); 
 	
 	
 	public function __construct() {
@@ -42,23 +43,29 @@ class Admin_Controller extends Template_Controller {
 	} // function _getOffset
 
 	public function blog($postId = null) {
+		$post = ORM::factory('blog_post', $postId);
 		
-	} // function blog
-
-	public function blogs() {
 		if (form::valid()) {
-			$post = new Blog_Post_Model;
-			$post->title   = $this->input->post('title');
-			$post->summary = $this->input->post('summary');
-			$post->body    = $this->input->post('body');
+			$post->title     = $this->input->post('title');
+			$post->summary   = $this->input->post('summary');
+			$post->markdown  = $this->input->post('body');
+			$post->body      = markdown::parse($this->input->post('body'));
+			
 			if ($post->save()) {
-				$this->message(Kohana::lang('messages.admin.blogpost.created'));
+				$this->message(Kohana::lang('messages.admin.blogpost.saved'));
 				url::redirect('admin/blog/' . $post->id);
 			}
 			else {
 				$this->error($post->exceptions);
 			}
 		}
+		
+		
+		$this->tpl->post = $post;
+		$this->titleValues = array($post->title);
+	} // function blog
+
+	public function blogs() {
 		
 		$this->tpl->posts = ORM::factory('blog_post')
 			->limit(self::blogPostsPerPage, $this->_getOffset(self::blogPostsPerPage))
@@ -90,6 +97,27 @@ class Admin_Controller extends Template_Controller {
 	
 	public function index() {
 	} // function index
+	
+	public function newBlogPost() {
+		if (form::valid()) {
+			$post = new Blog_Post_Model;
+			$post->title     = $this->input->post('title');
+			$post->summary   = $this->input->post('summary');
+			$post->markdown  = $this->input->post('body');
+			$post->permalink = url::title($this->input->post('permalink'));
+			$post->body      = markdown::parse($this->input->post('body'));
+			$post->user_id   = $this->user->id;
+			
+			if ($post->save()) {
+				$this->message(Kohana::lang('messages.admin.blogpost.created'));
+				url::redirect('admin/blog/' . $post->id);
+			}
+			else {
+				$this->error($post->exceptions);
+			}
+		}
+		
+	} // function newBlogPost
 	
 	public function user($userId = null) {
 		$user = ORM::factory('user', $userId);

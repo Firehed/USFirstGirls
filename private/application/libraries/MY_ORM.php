@@ -1,7 +1,7 @@
 <?php
 class ORM extends ORM_core {
 	protected $exceptions = array();
-	private $escapeOutput = true;
+	protected $escapeOutput = true;
 	
 	public function __get($column) {
 		// Automatic support of getters

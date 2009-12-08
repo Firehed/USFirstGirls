@@ -7,8 +7,9 @@
 		<link rel="stylesheet" href="style.css" type="text/css" />
 		<style type="text/css" media="screen">
 			body {
-				background-color: #FFF;
+/*				background-color: #FFF;*/
 /*				background: #FFF url(img/squares2.png) top center;*/
+				background: #FFF url(img/squaresFaded.png) top center;
 				font-family: Helvetica, Arial, sans-serif;
 				font-size: 10pt;
 			}
@@ -33,11 +34,14 @@
 			#top nav li {
 				float: left;
 			}
-				#top nav li a {
-					color: #999;
+				#top nav li a,
+				#top nav li span {
 					display: block;
 					padding: 10px;
 					text-decoration:none;
+				}
+				#top nav li a {
+					color: #999;
 				}
 					#top nav li a:hover {
 						color: #444;
@@ -59,6 +63,13 @@
 				border: 1px solid #007F22;
 				background-color: #4EFF7D;
 			}
+
+			#main {
+				line-height: 1.25;
+			}
+				#main li {
+					padding-bottom: 10px;
+				}
 
 			.blogPost {
 				margin-bottom: 10px;
@@ -140,22 +151,11 @@
 	</head>
 	<body>
 		<header id="top" class="container_12">
-			<!-- <img src="img/FIRSTlogoR_color_rgb_140.gif" width="140" height="122" alt="US FIRST Logo" class="grid_2" /> -->
 			<a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>"><img src="img/FIRSTlogoR_color_rgb_140.gif" width="140" height="122" alt="US FIRST Logo" class="grid_2"/></a>
-			<!-- <a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>"><img src="img/FIRSTLOGOV1.gif" width="220" height="147" alt="FIRSTLOGOV1" class="grid_3"/></a> -->
 			<h1 class="grid_5"><a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>"><?php echo Kohana::lang('site.home.title'); ?></a></h1>
 			<nav class="grid_5">
 				<ul>
-					<li><a href=""        title="<?php echo Kohana::lang('site.nav.home.title');    ?>"><?php echo Kohana::lang('site.nav.home.anchor');    ?></a></li>
-					<li><a href="blog"    title="<?php echo Kohana::lang('site.nav.blog.title');    ?>"><?php echo Kohana::lang('site.nav.blog.anchor');    ?></a></li>
-					<li><a href="forum"   title="<?php echo Kohana::lang('site.nav.forums.title');  ?>"><?php echo Kohana::lang('site.nav.forums.anchor');  ?></a></li>
-					<?php if ($this->user): ?>
-					<li><a href="profile" title="<?php echo Kohana::lang('site.nav.profile.title'); ?>"><?php echo Kohana::lang('site.nav.profile.anchor'); ?></a></li>
-					<li><a href="signout" title="<?php echo Kohana::lang('site.nav.signout.title'); ?>"><?php echo Kohana::lang('site.nav.signout.anchor'); ?></a></li>
-					<?php else: ?>
-					<li><a href="signin"  title="<?php echo Kohana::lang('site.nav.signin.title');  ?>"><?php echo Kohana::lang('site.nav.signin.anchor');  ?></a></li>
-					<li><a href="signup"  title="<?php echo Kohana::lang('site.nav.signup.title');  ?>"><?php echo Kohana::lang('site.nav.signup.anchor');  ?></a></li>
-					<?php endif; ?>
+					<?php echo new View('topNav'); ?>
 				</ul>
 			</nav>
 		<?php if ($errors): ?>
@@ -187,11 +187,12 @@
 			<nav class="grid_3">
 				<ul>
 					<li><a href="http://www.usfirst.org" title="FIRST Robotics official site" target="_blank">US FIRST Official Site</a></li>
+					<li><a href="http://www.theforceteam.com" title="Team 1073 - The Force Team" target="_blank">The Force Team</a></li>
 				</ul>
 			</nav>
 			<nav class="grid_3">
 				<ul>
-					<li><a href="http://www.theforceteam.com" title="Team 1073 - The Force Team" target="_blank">The Force Team</a></li>
+					<li>Site by <a href="http://www.eric-stern.com" title="Eric Stern - New England Web Developer and Photographer">Eric Stern</a> with input and feedback from the members and mentors of The Force Team</li>
 				</ul>
 			</nav>
 			<p class="grid_3">© USFirstGirls.org</p>

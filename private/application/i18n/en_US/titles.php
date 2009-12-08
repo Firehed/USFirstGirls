@@ -1,11 +1,13 @@
 <?php
 $lang = array(
 	'admin' => array(
-		'index' => 'Home - Admin Panel | USFirstGirls',
-		'user'  => '%s - Admin Panel | USFirstGirls',
-		'users' => 'Users - Admin Panel | USFirstGirls',
-		'forum' => 'Forums - Admin Panel | USFirstGirls',
-		'blogs' => 'Blogs - Admin Panel | USFirstGirls',
+		'blog'        => '%s - Admin Panel | USFirstGirls',
+		'blogs'       => 'Blogs - Admin Panel | USFirstGirls',
+		'forums'      => 'Forums - Admin Panel | USFirstGirls',
+		'index'       => 'Home - Admin Panel | USFirstGirls',
+		'newBlogPost' => 'New Blog Post - Admin Panel | USFirstGirls',
+		'user'        => '%s - Admin Panel | USFirstGirls',
+		'users'       => 'Users - Admin Panel | USFirstGirls',
 	),
 	'blog' => array(
 		'index' => 'USFirstGirls Blog',
