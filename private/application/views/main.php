@@ -148,6 +148,9 @@
 			document.createElement('nav');
 			document.createElement('article');
 		</script>
+		<!--[if lt IE 8]>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
+		<![endif]-->
 	</head>
 	<body>
 		<header id="top" class="container_12">
