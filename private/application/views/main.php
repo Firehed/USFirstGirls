@@ -7,18 +7,50 @@
 		<link rel="stylesheet" href="style.css" type="text/css" />
 		<style type="text/css" media="screen">
 			body {
-/*				background-color: #FFF;*/
-/*				background: #FFF url(img/squares2.png) top center;*/
-				background: #FFF url(img/squaresFaded.png) top center;
+				background-color: #5F0E84;
+				color: #FFF;
 				font-family: Helvetica, Arial, sans-serif;
 				font-size: 10pt;
+			}
+			
+			/* @group Sticky footer*/
+			html,body {
+				height:100%
+			}
+			#pushWrapper {
+				min-height: 100%;
+				height: auto !important;
+				height: 100%;
+				margin: 0 auto -80px;
+				
+			}
+			#bottom,#push {
+				height: 80px;
+			}
+			/* @end */
+			#callToAction {
+				font-size: 2em;
+				margin-top: 1em;
 			}
 			.container_12 {
 				overflow: hidden;
 			}
+			
+			a {
+				color: #7CA4EC;
+				text-decoration:none;
+			}
+			a:hover {
+				text-decoration:underline;
+			}
+			
 			a[target=_blank] {
 				background: url(img/external.png) no-repeat right center;
 				padding-right: 12px;
+			}
+
+			#top {
+				margin-bottom: 20px;
 			}
 
 			#top h1 {
@@ -27,6 +59,7 @@
 				#top h1 a {
 					text-decoration:none;
 					color: #000;
+					text-shadow: 0 1px 3px rgba(255,255,255,.5);
 				}
 			#top nav ul {
 				overflow: hidden;
@@ -41,11 +74,15 @@
 					text-decoration:none;
 				}
 				#top nav li a {
-					color: #999;
+					color: #FFF;
 				}
+				#top nav li span {
+					background-color: #999;
+				}
+				
 					#top nav li a:hover {
-						color: #444;
-						text-decoration: underline;
+						text-decoration: none;
+						background-color: #9d6cb4;
 					}
 
 			#alerts,#successMessages {
@@ -78,18 +115,13 @@
 					font-size: 18pt;
 				}
 					.blogPost h2 a {
-						color: #000;
 						text-decoration:none;
 					}
-						.blogPost h2 a:hover {
-							text-decoration: underline;
-						}
 
 			#forums nav {
 				margin-bottom: 10px;
 			}
 				#forums nav a {
-					color: #000;
 					font-size:12pt;
 					margin-bottom: 10px;
 				}
@@ -108,10 +140,7 @@
 				.forumTopic h2 {
 					font-size: 11pt;
 				}
-					.forum h2 a,
-					.forumTopic h2 a {
-						color: #000;
-					}
+
 				.forumTopic header .posts {
 					color: #999;
 				}
@@ -134,10 +163,6 @@
 			.pagination a {
 				font-size: 9pt!important;
 			}
-			
-			#bottom {
-				margin-top: 10px;
-			}
 		</style>
 		<script>
 			// HTML5 "shiv"
@@ -153,52 +178,53 @@
 		<![endif]-->
 	</head>
 	<body>
-		<header id="top" class="container_12">
-			<a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>"><img src="img/FIRSTlogoR_color_rgb_140.gif" width="140" height="122" alt="US FIRST Logo" class="grid_2"/></a>
-			<h1 class="grid_5"><a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>"><?php echo Kohana::lang('site.home.title'); ?></a></h1>
-			<nav class="grid_5">
-				<ul>
-					<?php echo new View('topNav'); ?>
+		<div id="pushWrapper">
+			<header id="top" class="container_12">
+				<a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>"><img src="img/logoColoredSquares.gif" width="220" height="147" alt="US FIRST Logo" class="grid_3"/></a>
+				<div class="grid_9">
+					<h1 class="grid_4 alpha"><a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>"><?php echo Kohana::lang('site.home.title'); ?></a></h1>
+					<nav class="grid_5 omega">
+						<ul>
+							<?php echo new View('topNav'); ?>
+						</ul>
+					</nav>
+					<h2 class="grid_9 alpha omega" id="callToAction"><?php echo Kohana::lang('site.home.callToAction'); ?></h2>
+				</div>
+			<?php if ($errors): ?>
+				<ul id="alerts">
+				<?php foreach ($errors as $error): ?>
+					<li><?php echo $error; ?></li>
+				<?php endforeach; ?>
 				</ul>
-			</nav>
-		<?php if ($errors): ?>
-			<ul id="alerts">
-			<?php foreach ($errors as $error): ?>
-				<li><?php echo $error; ?></li>
-			<?php endforeach; ?>
-			</ul>
-		<?php endif; ?>
-		<?php if ($messages): ?>
-			<ul id="successMessages">
-			<?php foreach ($messages as $message): ?>
-				<li><?php echo $message; ?></li>
-			<?php endforeach; ?>
-			</ul>
-		<?php endif; ?>
-		</header>
+			<?php endif; ?>
+			<?php if ($messages): ?>
+				<ul id="successMessages">
+				<?php foreach ($messages as $message): ?>
+					<li><?php echo $message; ?></li>
+				<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
+			</header>
 
-		<section id="main" class="container_12">
-<?php echo $controller; ?>
-		</section>
-	
+			<section id="main" class="container_12">
+	<?php echo $controller; ?>
+			</section>
+			<div id="push"></div>
+		</div>
 		<footer id="bottom" class="container_12">
-			<nav class="grid_3">
-				<ul>
-					<li><a href="teams" title="USFirstGirls.org Teams">Teams</a></li>
-				</ul>
-			</nav>
-			<nav class="grid_3">
+			<nav class="grid_4">
 				<ul>
 					<li><a href="http://www.usfirst.org" title="FIRST Robotics official site" target="_blank">US FIRST Official Site</a></li>
 					<li><a href="http://www.theforceteam.com" title="Team 1073 - The Force Team" target="_blank">The Force Team</a></li>
+					<li><a href="http://www.chiefdelphi.com" title="Chief Delphi - FIRST Forums" target="_blank">Chief Delphi</a></li>
 				</ul>
 			</nav>
-			<nav class="grid_3">
+			<nav class="grid_4">
 				<ul>
-					<li>Site by <a href="http://www.eric-stern.com" title="Eric Stern - New England Web Developer and Photographer">Eric Stern</a> with input and feedback from the members and mentors of The Force Team</li>
+					<li>Site design by <a href="http://www.eric-stern.com" title="Eric Stern - New England Web Developer and Photographer">Eric Stern</a>.</li>
 				</ul>
 			</nav>
-			<p class="grid_3">© USFirstGirls.org</p>
+			<p class="grid_4">© USFirstGirls.org</p>
 		</footer>
 	</body>
 </html>

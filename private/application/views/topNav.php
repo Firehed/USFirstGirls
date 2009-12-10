@@ -1,6 +1,7 @@
 <?php
 $alwaysLinks = array(
 	'home'   => '',
+	'teams'  => 'teams',
 	'blog'   => 'blog',
 	'forums' => 'forum'
 );

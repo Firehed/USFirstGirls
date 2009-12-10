@@ -43,7 +43,8 @@ $lang = array(
 		),
 	),
 	'home' => array(
-		'title' => 'Welcome to USFirstGirls.org',
+		'callToAction' => 'Help get more girls involved in FIRST',
+		'title'        => 'Welcome to USFirstGirls.org',
 	),
 	'nav' => array(
 		'blog' => array(
@@ -73,6 +74,10 @@ $lang = array(
 		'signup' => array(
 			'anchor' => 'Sign Up',
 			'title' => 'Sign up for USFirstGirls',
+		),
+		'teams' => array(
+			'anchor' => 'Teams',
+			'title' => 'Teams that have joined USFirstGirls',
 		),
 	),
 	'session' => array(
