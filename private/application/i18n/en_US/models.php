@@ -26,11 +26,15 @@ $lang = array(
 	),
 	'user' => array(
 		'email' => array(
-			'inuse'   => 'That email address is already in use',
-			'invalid' => 'That does not appear to be a valid email address',
+			'blank'   => 'You must provide an email address to sign up (we don\'t spam - promise!).',
+			'inuse'   => 'That email address is already in use.',
+			'invalid' => 'That does not appear to be a valid email address.',
 		),
 		'password' => array(
 			'invalid' => 'Passwords must be at least 6 characters long (but more is better)',
+		),
+		'teamNumber' => array(
+			'invalid' => 'That\'s not a valid team number.',
 		),
 		'username' => array(
 			'blank' => 'You must provide a username to register',

@@ -1,4 +1,4 @@
-<?php
+``<?php
 /*
 CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -94,6 +94,9 @@ class User_Model extends ORM {
 
 
 	public function setEmail($email) {
+		if (!trim($email)) {
+			throw new ValidationException('models.user.email.blank');
+		}
 		if (!valid::email($email)) {
 			throw new ValidationException('models.user.email.invalid');
 		}
@@ -111,6 +114,13 @@ class User_Model extends ORM {
 		// Moved from the original Auth_User_Model
 		return Auth::instance()->hash_password($password);
 	} // function setPassword
+	
+	public function setTeam_number($number) {
+		if (!is_numeric($number)) {
+			throw new ValidationException('models.user.teamNumber.invalid');
+		}
+		return $number;
+	} // function setTeam_number
 
 	public function setUsername($username) {
 		if (!$username) {

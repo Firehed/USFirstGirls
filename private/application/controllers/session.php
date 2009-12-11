@@ -22,9 +22,8 @@ class Session_Controller extends Template_Controller {
 			$user = new User_Model;
 			$user->username    = $this->input->post('username');
 			$user->email       = $this->input->post('email');
-			$user->password    = $this->input->post('password');
 			$user->team_number = $this->input->post('teamNumber');
-			
+			$user->password    = $this->input->post('password');
 			
 			if ($user->add(ORM::factory('role', 'login')) AND $user->save()) {
 				$this->auth->login($this->input->post('username'), $this->input->post('password'));
