@@ -21,8 +21,10 @@ class Team_Controller extends Template_Controller {
 			if (!$team->loaded) {
 				$team->number = $this->user->team_number;
 			}
-			$team->recruited  = $this->input->post('recruited');
-			$team->methods    = $this->input->post('methods');
+			$team->recruited = $this->input->post('recruited');
+			$team->methods   = $this->input->post('methods');
+			$team->girls     = $this->input->post('girlsOnTeam');
+			$team->size      = $this->input->post('teamSize');
 			if ($team->save()) {
 				url::redirect('team');
 			}

@@ -8,11 +8,11 @@
 
 <dl class="grid_6 omega">
 	<dt>Your Team's Profile</dt>
-	<dd><a href="team/edit">Edit your team's profile</a></dd>
+	<dd><a href="team/edit">Edit</a></dd>
 	
 	<dt>Girls Recruited</dt>
-	<dd><?php echo $user->team->recruited; ?></dd>
+	<dd><?php echo $team->recruited; ?> (<?php echo $team->girls; ?>/<?php echo $team->size; ?>)</dd>
 
 	<dt>Methods Used to Recruit Members</dt>
-	<dd><?php echo $user->team->methods; ?></dd>
+	<dd><?php echo $team->methods; ?></dd>
 </dl>
