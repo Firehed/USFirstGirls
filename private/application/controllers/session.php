@@ -28,6 +28,7 @@ class Session_Controller extends Template_Controller {
 			if ($user->add(ORM::factory('role', 'login')) AND $user->save()) {
 				$this->auth->login($this->input->post('username'), $this->input->post('password'));
 				$this->message(Kohana::lang('messages.session.signup'));
+				url::redirect('team/edit');
 			}
 			else {
 				$this->error($user->exceptions);

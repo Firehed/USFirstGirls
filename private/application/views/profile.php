@@ -1,1 +1,1 @@
-<?php echo $method; ?>
+<div class="grid_12"><?php echo $method; ?></div>
