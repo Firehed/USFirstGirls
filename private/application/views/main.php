@@ -108,6 +108,10 @@
 					padding-bottom: 10px;
 				}
 
+			#home {
+				font-size: 110%;
+			}
+
 			.blogPost {
 				margin-bottom: 10px;
 			}
