@@ -13,6 +13,8 @@ class Team_Controller extends Template_Controller {
 			if (!$team->loaded) {
 				$team->number = $this->user->team_number;
 			}
+			$team->name      = $this->input->post('name');
+			$team->location  = $this->input->post('location');
 			$team->recruited = $this->input->post('recruited');
 			$team->methods   = $this->input->post('methods');
 			$team->girls     = $this->input->post('girlsOnTeam');

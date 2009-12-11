@@ -2,6 +2,12 @@
 	<fieldset>
 		<?php echo form::csrf(); ?>
 		
+		<label for="name">Team Name</label>
+		<input type="text" name="name" value="<?php echo $team->name; ?>" id="name" />
+		
+		<label for="location">Location</label>
+		<input type="text" name="location" value="<?php echo $team->location; ?>" id="location" />
+		
 		<label for="recruited">Girls recruited this year</label>
 		<input type="text" name="recruited" value="<?php echo $team->recruited; ?>" id="recruited" />
 		
