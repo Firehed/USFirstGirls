@@ -89,10 +89,6 @@ class User_Model extends ORM {
 		return permissions::can($this, $action, $enforcer);
 	} // function can
 */
-
-
-
-
 	public function setEmail($email) {
 		if (!trim($email)) {
 			throw new ValidationException('models.user.email.blank');
@@ -122,21 +118,8 @@ class User_Model extends ORM {
 		return $number;
 	} // function setTeam_number
 
-	public function setUsername($username) {
-		if (!$username) {
-			throw new ValidationException('models.user.username.blank');
-		}
-		if (ORM::factory('user', $username)->loaded) {
-			throw new ValidationException('models.user.username.inuse');
-		}
-		return $username;
-	} // function setUsername
-
 	public function unique_key($id) {
-		if ( ! empty($id) AND is_string($id) AND ! ctype_digit($id)) {
-			return valid::email($id) ? 'email' : 'username';
-		}
-		return parent::unique_key($id);
+		return is_numeric($id) ? parent::unique_key($id) : 'email';
 	} // function unique_key
 
 } // class User Model

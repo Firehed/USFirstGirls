@@ -88,8 +88,6 @@ $lang = array(
 		'signup'        => 'Sign Up',
 		'signupreason'  => '<p>In order to post in the forums, you need to sign up.  We won\'t spam you or anything like that.</p>',
 		'teamNumber'    => 'FIRST Team Number',
-		'usernameemail' => 'Username/Email',
-		'username'      => 'Username',
-		
+		'usernameemail' => 'Email Address', // Username no longer used
 	),
 );

@@ -2,9 +2,6 @@
 	<fieldset>
 		<?php echo form::csrf(); ?>
 		
-		<label for="username"><?php echo Kohana::lang('site.session.username'); ?></label>
-		<input type="text" name="username" id="username" value="<?php echo $this->input->post('username'); ?>" />
-		
 		<label for="email"><?php echo Kohana::lang('site.session.email'); ?></label>
 		<input type="text" name="email" id="email" value="<?php echo $this->input->post('email'); ?>" />
 		

@@ -1,6 +1,10 @@
 -- 2009-12-11
+ALTER TABLE `users` DROP `username`;
+-- 2009-12-11
 ALTER TABLE `teams` ADD `name` varchar(64) NOT NULL DEFAULT ''  AFTER `number`;
 ALTER TABLE `teams` ADD `location` tinytext NOT NULL DEFAULT ''  AFTER `size`;
+
+
 
 -- 2009-12-10
 ALTER TABLE `teams` ADD `girls` tinyint NULL DEFAULT NULL  AFTER `methods`;
