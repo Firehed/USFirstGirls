@@ -1,4 +1,4 @@
-``<?php
+<?php
 /*
 CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
