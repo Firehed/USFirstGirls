@@ -1,13 +1,5 @@
 <?php
 class Team_Controller extends Template_Controller {
-	public function index() {
-		if (!$this->user) {
-			$this->error(Kohana::lang('errors.team.index'));
-			url::redirect('');
-		}
-		
-		$this->tpl->team = $this->user->team;
-	} // function index
 
 	public function edit() {
 		if (!$this->user) {
@@ -26,7 +18,7 @@ class Team_Controller extends Template_Controller {
 			$team->girls     = $this->input->post('girlsOnTeam');
 			$team->size      = $this->input->post('teamSize');
 			if ($team->save()) {
-				url::redirect('team');
+				url::redirect('profile');
 			}
 			else {
 				$this->error($team->exceptions);
