@@ -13,6 +13,9 @@ $lang = array(
 		'newForum' => 'New forum created.',
 		'newTopic' => 'New topic created.',
 	),
+	'session' => array(
+		'signup' => 'Registration successful - thanks for signing up!',
+	),
 	'topic' => array(
 		'reply' => 'Reply added.',
 	),
