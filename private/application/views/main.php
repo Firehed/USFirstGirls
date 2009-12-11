@@ -91,6 +91,7 @@
 				margin: 0 170px 20px;
 				-webkit-border-radius: 10px;
 				-moz-border-radius: 10px;
+				color: #000;
 			}
 			#alerts {
 				border: 1px solid #7F0D0B;
