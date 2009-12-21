@@ -219,9 +219,10 @@
 		<footer id="bottom" class="container_12">
 			<nav class="grid_4">
 				<ul>
-					<li><a href="http://www.usfirst.org" title="FIRST Robotics official site" target="_blank">US FIRST Official Site</a></li>
+					<!-- <li><a href="http://www.usfirst.org" title="FIRST Robotics official site" target="_blank">US FIRST Official Site</a></li>
 					<li><a href="http://www.theforceteam.com" title="Team 1073 - The Force Team" target="_blank">The Force Team</a></li>
-					<li><a href="http://www.chiefdelphi.com" title="Chief Delphi - FIRST Forums" target="_blank">Chief Delphi</a></li>
+					<li><a href="http://www.chiefdelphi.com" title="Chief Delphi - FIRST Forums" target="_blank">Chief Delphi</a></li> -->
+					<li>Organized by <a href="http://www.theforceteam.com" title="Team 1073 - The Force Team" target="_blank">Team 1073: The Force Team</a>.</li>
 				</ul>
 			</nav>
 			<nav class="grid_4">
