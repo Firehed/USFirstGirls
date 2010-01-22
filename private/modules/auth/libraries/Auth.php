@@ -221,6 +221,11 @@ class Auth_Core {
 	{
 		$salt = '';
 
+		// Empty passwords will cause problems (invalid users, for example)
+		if (!$password) {
+			return '';
+		}
+
 		foreach ($this->config['salt_pattern'] as $i => $offset)
 		{
 			// Find salt characters, take a good long look...
