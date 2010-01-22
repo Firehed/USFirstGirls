@@ -81,7 +81,8 @@ class User_Model extends ORM {
 	} // function delete
 	
 	public function getName() {
-		return $this->username;
+return substr($this->email, 0, strpos($this->email, '@'));
+//		return $this->username;
 	} // function getName
 	
 /*

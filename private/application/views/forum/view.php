@@ -25,7 +25,8 @@
 				Started 
 				<time datetime="<?php echo $topic->firstPost->timeCreatedW3C; ?>"><?php echo text::relativeTime($topic->firstPost->timeCreated); ?></time>
 				by
-				<span class="poster"><?php echo $topic->user->name; ?></span>
+				<span class="poster"><?php echo 
+$topic->user->name; ?></span>
 			</div> <!-- div .firstPost -->
 			<div class="lastPost">
 				Last post 
