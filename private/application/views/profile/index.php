@@ -2,6 +2,9 @@
 	<dt>Your Profile</dt>
 	<dd><a href="profile/edit">Edit</a></dd>
 	
+	<dt>Forum Nickname</dt>
+	<dd><?=$user->name?></dd>
+	
 	<dt>Team Number</dt>
 	<dd><?php echo $user->team_number; ?></dd>
 </dl>

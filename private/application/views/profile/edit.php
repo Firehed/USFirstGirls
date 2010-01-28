@@ -1,10 +1,5 @@
-<form action="<?php echo url::current(); ?>" method="post">
-	<fieldset>
-		<?php echo form::csrf(); ?>
-		
-		<label for="teamNumber">Team Number</label>
-		<input type="text" name="teamNumber" value="<?php echo $user->team_number; ?>" id="teamNumber" />
-				
-		<button type="submit">Save</button>
-	</fieldset>
-</form>
+<?=form::open()?>
+<?=form::input('teamNumber', 'teamNumber', $user->team_number)?>
+<?=form::input('nickname', 'name', $user->name)?>
+<?=form::submit('save')?>				
+<?=form::close()?>
