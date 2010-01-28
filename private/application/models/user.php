@@ -21,12 +21,11 @@ CREATE TABLE IF NOT EXISTS `roles_users` (
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `email` varchar(127) NOT NULL,
-  `username` varchar(32) NOT NULL DEFAULT '',
+  `name` varchar(32) NOT NULL DEFAULT '',
   `password` char(50) NOT NULL,
   `logins` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `last_login` int(10) UNSIGNED,
   PRIMARY KEY  (`id`),
-  UNIQUE KEY `uniq_username` (`username`),
   UNIQUE KEY `uniq_email` (`email`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
  
@@ -81,8 +80,7 @@ class User_Model extends ORM {
 	} // function delete
 	
 	public function getName() {
-return substr($this->email, 0, strpos($this->email, '@'));
-//		return $this->username;
+		return $this->object['name'] ? $this->object['name'] : substr($this->email, 0, strpos($this->email, '@'));
 	} // function getName
 	
 /*

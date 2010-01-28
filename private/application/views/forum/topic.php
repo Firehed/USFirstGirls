@@ -21,7 +21,7 @@
 	<li class="forumPost">
 		<footer class="grid_3 alpha">
 			<span class="poster"><?php echo $post->user->name; ?></span>
-			<img src="http://www.gravatar.com/avatar/<?php echo md5($post->user->email); ?>.jpg?r=g&amp;s=50" />
+			<img src="http://www.gravatar.com/avatar/<?php echo md5($post->user->email); ?>.jpg?r=g&amp;s=50" height="50" width="50" />
 			
 			<span class="postTime">Posted <time datetime="<?php echo $post->timeCreatedW3C; ?>"><?php echo text::relativeTime($post->timeCreated); ?></time></span>
 		</footer>

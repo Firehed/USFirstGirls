@@ -163,7 +163,13 @@
 				.forumPost footer .postTime {
 					display:block;
 				}
-
+				.forumPost footer,
+				.forumPost article {
+					min-height: 90px;
+					/* IE6 min-height hack */
+					height: auto !important; 
+					height: 90px;
+				}
 			.pagination,
 			.pagination a {
 				font-size: 9pt!important;

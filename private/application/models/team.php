@@ -15,4 +15,16 @@ class Team_Model extends ORM {
 	protected $has_many = array('users');
 	protected $primary_key = 'number';
 	
+	public function save() {
+		$return = parent::save();
+		// When teams change, update our denormalized data table
+		$teamCount  = $this->db->query('SELECT count(*) AS count FROM teams')->current()->count;
+		$addedCount = $this->db->query('SELECT sum(recruited) AS sum FROM teams')->current()->sum;
+		ORM::factory('data', 'teamCount')->setTo($teamCount)->save();
+		ORM::factory('data', 'addedCount')->setTo($addedCount)->save();
+
+
+		return $return;
+	} // function save
+	
 } // class Team_Model
