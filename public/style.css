@@ -22,10 +22,10 @@ header,footer,article,section,aside,nav{display:block;}
 
 /* @group Forms and DLs */
 label,button{cursor:pointer;}
-label,input[type=text],input[type=url],input[type=password],input[type=file],input[type=checkbox],select,textarea,dd,dt{margin-bottom:1em;}
+label,input[type=text],input[type=url],input[type=email],input[type=password],input[type=file],input[type=checkbox],select,textarea,dd,dt{margin-bottom:1em;}
 label,dt{display:block;clear:left;float:left;width:40%;text-align:right;padding-right:5%}
 label:after,dt:after{content:":";}
-input[type=text],input[type=url],input[type=password],input[type=file],select,textarea,dd{float:left;width:50%}
+input[type=text],input[type=url],input[type=email],input[type=password],input[type=file],select,textarea,dd{float:left;width:50%}
 input[type=checkbox]{float:left;}
 button{margin-left:45%;float:left;clear:left;}
 textarea{height:10em;resize:vertical;}

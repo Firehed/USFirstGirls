@@ -21,8 +21,8 @@ class form extends form_Core {
 		     . '</select><br />';
 	} // function dropdown
 	
-	public static function email($label, $name, $value = '') {
-		return self::input($label, $name, $value, 'email', 'email', 'email');
+	public static function email($label, $name, $value = '', $placeholder = '') {
+		return self::input($label, $name, $value, $placeholder, 'email', 'email');
 	} // function email
 
 	public static function hidden($name, $value) {
@@ -45,8 +45,8 @@ class form extends form_Core {
 		return '<form action="' . $action . '" method="post" class="' . $class . '"><fieldset>';
 	} // function open
 
-	public static function password($label, $name, $value = '', $validate = true) {
-		return self::input($label, $name, $value, 'password', $validate ? 'password' : null, 'password');
+	public static function password($label, $name, $value = '', $placeholder = '') {
+		return self::input($label, $name, $value, $placeholder, null, 'password');
 	} // function password
 
 	public static function radio($label, $name, $value, $checked = false) {

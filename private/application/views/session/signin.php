@@ -1,14 +1,7 @@
-<form action="<?php echo url::current(); ?>" method="post" class="grid_8">
-	<fieldset>
-		<?php echo form::csrf(); ?>
-		<label for="username"><?php echo Kohana::lang('site.session.usernameemail'); ?></label>
-		<input type="text" name="username" id="username" />
+<?=form::open(null, 'grid_8')?>
+<?=form::email('email', 'username')?>
+<?=form::password('password','password')?>
+<?=form::submit('signin')?>
 		
-		<label for="password"><?php echo Kohana::lang('site.session.password'); ?></label>
-		<input type="password" name="password" id="password" />
-		
-		<button type="submit"><?php echo Kohana::lang('site.session.signin'); ?></button>
-		
-	</fieldset>
-</form>
+<?=form::close()?>
 <aside class="grid_4"><?php echo Kohana::lang('site.session.signinreason'); ?></aside>
