@@ -1,6 +1,6 @@
 <dl>
 	<dt><?php echo Kohana::lang('site.admin.user.username'); ?></dt>
-	<dd><?php echo $user->username; ?></dd>
+	<dd><?php echo $user->name; ?></dd>
 	<dt><?php echo Kohana::lang('site.admin.user.email'); ?></dt>
 	<dd><?php echo $user->email; ?></dd>
 	<dt><?php echo Kohana::lang('site.admin.user.logins'); ?></dt>
