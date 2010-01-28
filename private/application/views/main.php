@@ -233,7 +233,7 @@
 			</nav>
 			<nav class="grid_4">
 				<ul>
-					<li>Site design by <a href="http://www.eric-stern.com" title="Eric Stern - New England Web Developer and Photographer">Eric Stern</a>.</li>
+					<li>Site built by <a href="http://www.eric-stern.com" title="Eric Stern - New England Web Developer and Photographer">Eric Stern</a>.</li>
 				</ul>
 			</nav>
 			<p class="grid_4">© USFirstGirls.org</p>
