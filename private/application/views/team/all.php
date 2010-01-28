@@ -10,7 +10,11 @@
 	<tbody>
 <?php foreach ($teams as $team): ?>
 		<tr>
-			<td><?php echo $team->number; ?>: <?php echo $team->name; ?></td>
+			<td><?=$team->number?>: <?=$team->name?>
+				<?php if ($team->website): ?>
+					<a href="<?=$team->website?>" target="_blank">(web)</a>
+				<?php endif; ?>
+			</td>
 			<td><?php echo $team->location; ?></td>
 			<td><?php echo $team->recruited; ?></td>
 			<td><?php echo text::auto_p($team->methods); ?></td>

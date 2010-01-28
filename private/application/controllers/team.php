@@ -15,6 +15,7 @@ class Team_Controller extends Template_Controller {
 			}
 			$team->name      = $this->input->post('name');
 			$team->location  = $this->input->post('location');
+			$team->website   = $this->input->post('website');
 			$team->recruited = $this->input->post('recruited');
 			$team->methods   = $this->input->post('methods');
 			$team->girls     = $this->input->post('girlsOnTeam');

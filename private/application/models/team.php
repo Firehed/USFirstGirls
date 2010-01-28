@@ -23,8 +23,22 @@ class Team_Model extends ORM {
 		ORM::factory('data', 'teamCount')->setTo($teamCount)->save();
 		ORM::factory('data', 'addedCount')->setTo($addedCount)->save();
 
-
 		return $return;
 	} // function save
+	
+	public function setWebsite($url) {
+		if (!trim($url)) {
+			return '';
+		}
+		
+		if (!valid::url($url)) {
+			$url = 'http://' . $url;
+			if (!valid::url($url)) {
+				throw new ValidationException('models.team.website');
+			}
+		}
+		
+		return $url;
+	} // function setWebsite
 	
 } // class Team_Model

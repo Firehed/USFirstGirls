@@ -24,6 +24,9 @@ $lang = array(
 			'empty' => 'Your topic needs a title.',
 		),
 	),
+	'team' => array(
+		'website' => 'That doesn\'t appear to be a valid website.',
+	),
 	'user' => array(
 		'email' => array(
 			'blank'   => 'You must provide an email address to sign up (we don\'t spam - promise!).',

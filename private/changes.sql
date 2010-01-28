@@ -25,3 +25,5 @@ ALTER TABLE `teams` CHANGE `girls` `girls` tinyint(4) NOT NULL DEFAULT '0';
 ALTER TABLE `teams` CHANGE `size` `size` tinyint(4) NOT NULL DEFAULT '0';
 ALTER TABLE `teams` CHANGE `recruited` `recruited` tinyint(4) NOT NULL DEFAULT '0';
 
+-- 2010-01-27
+ALTER TABLE `teams` ADD `website` tinytext NOT NULL AFTER `location`;
