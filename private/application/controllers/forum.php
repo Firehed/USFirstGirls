@@ -1,8 +1,8 @@
 <?php
 class Forum_Controller extends Template_Controller {
 
-	const topicsPerPage = 40;
-	const postsPerPage  = 20;
+	const topicsPerPage = 15;
+	const postsPerPage  = 15;
 	
 	private function _getOffset($total) {
 		return $total * ($this->input->get('page', 1) - 1);

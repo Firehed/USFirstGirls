@@ -48,3 +48,4 @@
 </form>
 <?php endif; ?>
 
+<nav class="grid_12"><?php echo $pagination; ?></nav>

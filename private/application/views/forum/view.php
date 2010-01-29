@@ -38,4 +38,4 @@ $topic->user->name; ?></span>
 	</li>
 <?php endforeach; ?>
 </ul>
-
+<nav class="grid_12"><?=$pagination?></nav>
