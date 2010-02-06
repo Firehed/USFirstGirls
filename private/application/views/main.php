@@ -174,6 +174,29 @@
 			.pagination a {
 				font-size: 9pt!important;
 			}
+
+ol ol, ol ul, ul ol, ul ul {
+margin-top: 1em;
+margin-left: 2em;
+}
+p {
+line-height: 1.4;
+padding-bottom: 1em;
+}
+.blogPost ol, .blogPost ul {
+list-style-position: inside;
+}
+.blogPost ul {
+list-style-type: disc;
+}
+.blogPost ol {
+list-style-type: decimal;
+}
+.blogPost ol p:first-child, .blogPost ul p:first-child {
+display: inline;
+}
+
+
 		</style>
 		<script>
 			// HTML5 "shiv"

@@ -14,4 +14,4 @@ class Blog_Controller extends Template_Controller {
 		$this->tpl->post = $post;
 		$this->titleValues = array($post->title);
 	} // function post
-}
+} // class Blog_Controller
