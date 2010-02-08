@@ -5,7 +5,7 @@
 	<li>
 		<article class="blogPost">
 			<header>
-				<h2><a href="admin/blog/<?php echo $post->id; ?>"><?php echo $post->title; ?></a></h2>
+				<h2><a href="admin/blog/<?php echo $post->permalink; ?>"><?php echo $post->title; ?></a></h2>
 				Posted on 
 				<time datetime="<?php echo $post->timeCreatedW3C; ?>"><?php echo date('D, M j, Y', $post->timeCreated); ?></time>
 				by <?php echo $post->user->name; ?>
