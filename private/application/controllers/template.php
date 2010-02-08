@@ -18,6 +18,7 @@ abstract class Template_Controller extends Controller {
 	} // function __construct
 	
 	public function _render() {
+		header('Connection: close'); // This should fix a bug with Safari file uploads...
 		$this->template->title   = Kohana::lang('titles.' . Router::$controller . '.' . Router::$method, $this->titleValues);
 		/*
 		// Per-page javascript support
