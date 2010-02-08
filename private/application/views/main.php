@@ -254,5 +254,19 @@ display: inline;
 			</ul>
 			<p class="grid_4"><!--<a href="https://www.wepay.com/public/donate/394" title="Donate with WePay" target="_blank"><img src="https://www.wepay.com/img/donate.png" height="46" width="231" alt="Donate with WePay" /></a>--></p>
 		</footer>
+		<!-- Google Analytics -->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-12895211-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script');
+				ga.src = 'https://ssl.google-analytics.com/ga.js';
+				ga.setAttribute('async', 'true');
+				document.documentElement.firstChild.appendChild(ga);
+			})();
+		</script>
+		<!-- End Google Analytics -->
 	</body>
 </html>
