@@ -1,5 +1,12 @@
 <?php
 class text extends text_Core {
+	public static function bytes($bytes, $force_unit = NULL, $format = NULL, $si = TRUE) {
+		if ($bytes <= 1024) {
+			return "$bytes B";
+		}
+		return parent::bytes($bytes, $force_unit, $format, $si);
+	} // function bytes
+	
 	public static function relativeTime($time) {
 		$diff = time() - $time;
 		if ($diff == 0) {
