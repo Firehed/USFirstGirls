@@ -21,7 +21,7 @@ class File_Model extends ORM {
 
 	public $temp; // temporary filepath during upload
 
-	public function __construct($id) {
+	public function __construct($id = null) {
 		ini_set('memory_limit', '128M');
 		parent::__construct($id);
 	} // function __construct
