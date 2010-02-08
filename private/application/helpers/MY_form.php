@@ -44,6 +44,7 @@ class form extends form_Core {
 		$action = $action ? $action : url::current(); // Use url current if no default action set
 		$class = $class ? $class : 'columns'; // Default class is columns
 		$MP = $multipart ? ' enctype="multipart/form-data"' : '';
+		$multipart AND header('Connection: close');
 		return "<form action=\"$action\" method=\"post\" class=\"$class\"$MP><fieldset>";
 	} // function open
 
