@@ -7,22 +7,11 @@ $lang = array(
 		),
 		'forums' => array(
 			'anchor'    => 'Forums',
-			'newButton' => 'Create new forum',
-			'newDesc'   => 'New forum description',
-			'newName'   => 'New forum name',
 			'title'     => 'Manage forums',
 		),
 		'index' => array(
 			'anchor' => 'Admin home',
 			'title'  => 'Admin home page',
-		),
-		'blogPost' => array(
-			'body'       => 'Post body (<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">markdown</a> formatted)',
-			'newButton'  => 'Create post',
-			'permalink'  => 'Post permalink',
-			'saveButton' => 'Save changes',
-			'summary'    => 'Post summary',
-			'title'      => 'Post title',
 		),
 		'newBlogPost' => array(
 			'anchor'       => 'New Blog Post',
