@@ -40,9 +40,11 @@ class form extends form_Core {
 		      ."<input type=\"$type\" name=\"$name\" id=\"$id\" $value$ph$valid/>\n";
 	} // function input
 		
-	public static function open($action = null, $class = 'columns') {
+	public static function open($action = null, $class = null, $multipart = false) {
 		$action = $action ? $action : url::current(); // Use url current if no default action set
-		return '<form action="' . $action . '" method="post" class="' . $class . '"><fieldset>';
+		$class = $class ? $class : 'columns'; // Default class is columns
+		$MP = $multipart ? ' enctype="multipart/form-data"' : '';
+		return "<form action=\"$action\" method=\"post\" class=\"$class\"$MP><fieldset>";
 	} // function open
 
 	public static function password($label, $name, $value = '', $placeholder = '') {
