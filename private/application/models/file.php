@@ -52,7 +52,7 @@ class File_Model extends ORM {
 	} // function getPath
 		
 	public function getPath() {
-		return url::base() . 'media/' . $this->name;
+		return url::base() . 'media/' . rawurlencode($this->name);
 	} // function getPath
 	
 	// Custom save using Prepared Statements to work w/ longblobs...
