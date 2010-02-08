@@ -14,6 +14,8 @@ class Controller extends Controller_Core {
 		parent::__construct();
 		
 		$this->session = Session::instance();
+		
+		$this->session->get('csrf') OR $this->session->set('csrf', text::random('alnum', 32));
 		$this->auth = Auth::instance();
 		if ($this->auth->logged_in()) {
 			$this->user = $this->auth->get_user();
