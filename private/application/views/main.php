@@ -5,6 +5,7 @@
 		<base href="<?php echo url::base(); ?>" />
 		<title><?php echo $title; ?></title>
 		<link rel="stylesheet" href="style.css" type="text/css" />
+		<link rel="shortcut icon" href="favicon.ico" />
 		<style type="text/css" media="screen">
 			body {
 				background-color: #5F0E84;
@@ -246,20 +247,12 @@ display: inline;
 			<div id="push"></div>
 		</div>
 		<footer id="bottom" class="container_12">
-			<nav class="grid_4">
-				<ul>
-					<!-- <li><a href="http://www.usfirst.org" title="FIRST Robotics official site" target="_blank">US FIRST Official Site</a></li>
-					<li><a href="http://www.theforceteam.com" title="Team 1073 - The Force Team" target="_blank">The Force Team</a></li>
-					<li><a href="http://www.chiefdelphi.com" title="Chief Delphi - FIRST Forums" target="_blank">Chief Delphi</a></li> -->
-					<li>Organized by <a href="http://www.theforceteam.com" title="Team 1073 - The Force Team" target="_blank">Team 1073: The Force Team</a>.</li>
-				</ul>
-			</nav>
-			<nav class="grid_4">
-				<ul>
-					<li>Site built by <a href="http://www.eric-stern.com" title="Eric Stern - New England Web Developer and Photographer">Eric Stern</a>.</li>
-				</ul>
-			</nav>
-			<p class="grid_4">© USFirstGirls.org</p>
+			<p class="grid_4">Organized by <a href="http://www.theforceteam.com" title="Team 1073 - The Force Team" target="_blank">Team 1073: The Force Team</a>.</p>
+			<ul class="grid_4">
+				<li>© 2009-<?=date('Y')?> USFirstGirls.org.</li>
+				<li>Site built by <a href="http://www.eric-stern.com" title="Eric Stern - New England Web Developer and Photographer">Eric Stern</a>.</li>
+			</ul>
+			<p class="grid_4"><!--<a href="https://www.wepay.com/public/donate/394" title="Donate with WePay" target="_blank"><img src="https://www.wepay.com/img/donate.png" height="46" width="231" alt="Donate with WePay" /></a>--></p>
 		</footer>
 	</body>
 </html>
