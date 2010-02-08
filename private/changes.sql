@@ -27,3 +27,16 @@ ALTER TABLE `teams` CHANGE `recruited` `recruited` tinyint(4) NOT NULL DEFAULT '
 
 -- 2010-01-27
 ALTER TABLE `teams` ADD `website` tinytext NOT NULL AFTER `location`;
+
+-- 2010-02-07
+CREATE TABLE `files` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `size` int(11) unsigned NOT NULL,
+  `type` varchar(32) NOT NULL,
+  `md5` char(32) NOT NULL,
+  `sha1` char(40) NOT NULL,
+  `data` longblob NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
