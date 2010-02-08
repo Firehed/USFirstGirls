@@ -1,7 +1,25 @@
 <?php
 $lang = array(
 	'label' => array(
+		'admin' => array(
+			'forums' => array(
+				'newButton' => 'Create new forum',
+				'newDesc'   => 'New forum description',
+				'newName'   => 'New forum name',
+			),
+			'user' => array(
+				'button'       => 'Update user',
+				'searchfield'  => 'Username or email address',
+				'searchbutton' => 'Search for user',
+			),
+		),
 		'email' => 'Email Address',
+		'forum' => array(
+			'body' => 'Message',
+			'new' => 'Create New Topic',
+			'reply' => 'Post Reply',
+			'title' => 'Topic Title',
+		),
 		'nickname' => 'Nickname',
 		'password' => 'Password',
 		'signin' => 'Sign In',

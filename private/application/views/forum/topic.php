@@ -34,18 +34,11 @@
 </div> <!-- div .grid_3 -->
 
 <?php if ($this->user): ?>
-<form action="<?php echo url::current(); ?>" method="post" class="grid_7 prefix_2 suffix_3">
-	<p>Reply to this topic:</p>
-	<fieldset>
-		<?php echo form::csrf(); ?>
-		
-		<label for="body">Message</label>
-		<textarea id="body" name="body" rows="10" cols="40"></textarea>
-		
-		<button type="submit">Post Reply</button>
-		
-	</fieldset>
-</form>
+<?=form::open(null, 'grid_7 prefix_2 suffix_3')?>
+<p>Reply to this topic:</p>
+<?=form::textarea('forum.body','body')?>
+<?=form::submit('forum.reply')?>
+<?=form::close();?>
 <?php endif; ?>
 
 <nav class="grid_12"><?php echo $pagination; ?></nav>

@@ -8,19 +8,11 @@
 	<dt><?php echo Kohana::lang('site.admin.user.last_login'); ?></dt>
 	<dd><?php echo date('M j Y, g:i:sa', $user->last_login); ?></dd>
 </dl>
-
-<form action="" method="post">
-	<fieldset>
-		<?php echo form::csrf(); ?>
-
-
+<?=form::open()?>
 <?php foreach ($roles as $role): ?>
-	<input type="hidden" name="role[<?php echo $role->id; ?>]" value="no" />
+	<?=form::hidden("role[$role->id]", 'no')?>
 	<label for="role_<?php echo $role->id; ?>" title="<?php echo $role->description; ?>"><?php echo $role->name; ?></label>
 	<input id="role_<?php echo $role->id; ?>" type="checkbox" name="role[<?php echo $role->id; ?>]" value="yes" <?php if ($user->has($role)): ?>checked="checked"<?php endif; ?> />
-	
 <?php endforeach; ?>
-
-		<button type="submit"><?php echo Kohana::lang('site.admin.user.button'); ?></button>
-	</fieldset>
-</form>
+<?=form::submit('admin.user.button')?>
+<?=form::close()?>

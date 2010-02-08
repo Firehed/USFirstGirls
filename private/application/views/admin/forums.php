@@ -1,16 +1,8 @@
-<form action="<?php echo url::current(); ?>" method="post">
-	<fieldset>
-		<?php echo form::csrf(); ?>
-
-		<label for="name"><?php echo Kohana::lang('site.admin.forums.newName'); ?></label>
-		<input type="text" name="name" value="<?php echo $this->input->post('name'); ?>" id="name" />
-
-		<label for="description"><?php echo Kohana::lang('site.admin.forums.newDesc'); ?></label>
-		<input type="text" name="description" value="<?php echo $this->input->post('description'); ?>" id="description" />
-		
-		<button type="submit"><?php echo Kohana::lang('site.admin.forums.newButton'); ?></button>
-	</fieldset>
-</form>
+<?=form::open()?>
+<?=form::input('admin.forums.newName', 'name', $this->input->post('name'))?>
+<?=form::input('admin.forums.newDesc', 'description', $this->input->post('description'))?>
+<?=form::submit('admin.forums.newButton')?>
+<?=form::close()?>
 <ul>
 <?php foreach ($forums as $forum): ?>
 	<li class="forum">
