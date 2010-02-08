@@ -7,16 +7,18 @@ class Admin_Controller extends Template_Controller {
 	protected static $actions = array(
 		'blog'        => array('admin','blogger'),
 		'blogs'       => array('admin','blogger'),
+		'fileDelete'  => array('admin'),
+		'files'       => array('admin'),
 		'forums'      => array('admin'),
 		'index'       => array('admin','blogger'),
 		'newBlogPost' => array('admin','blogger'),
+		'upload'      => array('admin'),
 		'user'        => array('admin'),
 		'users'       => array('admin'),
 	);
 
 	// Sidebar is populated with these
-	public $pages = array('index', 'blogs', 'newBlogPost','forums', 'users'); 
-	
+	public $pages = array('index', 'blogs', 'newBlogPost','forums', 'users', 'files', 'upload'); 
 	
 	public function __construct() {
 		parent::__construct();
@@ -53,7 +55,7 @@ class Admin_Controller extends Template_Controller {
 			
 			if ($post->save()) {
 				$this->message(Kohana::lang('messages.admin.blogpost.saved'));
-				url::redirect('admin/blog/' . $post->id);
+				url::redirect('admin/blogs');
 			}
 			else {
 				$this->error($post->exceptions);
@@ -78,6 +80,23 @@ class Admin_Controller extends Template_Controller {
 		));
 		
 	} // function blogs
+	
+	public function fileDelete($fileId = null) {
+		$file = ORM::factory('file', $fileId);
+		
+		if (form::valid()) {
+			$file->delete();
+			$this->message('File deleted.');
+			url::redirect('admin/files');
+		}
+		$this->tpl->file = $file;
+	} // function fileDelete
+
+	public function files() {
+		$this->tpl->files = ORM::factory('file')
+		   ->select('id', 'name', 'size')
+		   ->find_all();
+	} // function files
 	
 	public function forums() {
 		if (form::valid()) {
@@ -110,7 +129,7 @@ class Admin_Controller extends Template_Controller {
 			
 			if ($post->save()) {
 				$this->message(Kohana::lang('messages.admin.blogpost.created'));
-				url::redirect('admin/blog/' . $post->id);
+				url::redirect('admin/blogs/');
 			}
 			else {
 				$this->error($post->exceptions);
@@ -118,6 +137,23 @@ class Admin_Controller extends Template_Controller {
 		}
 		
 	} // function newBlogPost
+
+	public function upload() {
+		if (form::valid()) {
+			$upload = $_FILES['file'];
+			if ($upload['error'] == UPLOAD_ERR_OK AND $file = File_Model::upload($upload)) {
+				$this->message('File uploaded.');
+				url::redirect("admin/files/#file_$file->id");
+			}
+			elseif ($upload['error'] == UPLOAD_ERR_NO_FILE) {
+				$this->error('No file uploaded.');
+			}
+			else {
+				$this->error('Error processing file.');
+				Kohana::log('error', 'Error uploading file in admin panel, status code: ' . $upload['error']);
+			}
+		}
+	} // function upload
 	
 	public function user($userId = null) {
 		$user = ORM::factory('user', $userId);

@@ -9,6 +9,10 @@ $lang = array(
 			'anchor'    => 'Forums',
 			'title'     => 'Manage forums',
 		),
+		'files' => array(
+			'anchor'    => 'Manage Files',
+			'title'     => 'Manage uploaded files',
+		),
 		'index' => array(
 			'anchor' => 'Admin home',
 			'title'  => 'Admin home page',
@@ -16,6 +20,10 @@ $lang = array(
 		'newBlogPost' => array(
 			'anchor'       => 'New Blog Post',
 			'title'        => 'Write a new blog post',
+		),
+		'upload' => array(
+			'anchor'       => 'Upload a File',
+			'title'        => 'Upload a new file',
 		),
 		'user' => array(
 			'button'     => 'Update user',

@@ -3,9 +3,12 @@ $lang = array(
 	'admin' => array(
 		'blog'        => '%s - Admin Panel | USFirstGirls',
 		'blogs'       => 'Blogs - Admin Panel | USFirstGirls',
+		'fileDelete'  => 'Delete a File - Admin Panel | USFirstGirls',
+		'files'       => 'File Management - Admin Panel | USFirstGirls',
 		'forums'      => 'Forums - Admin Panel | USFirstGirls',
 		'index'       => 'Home - Admin Panel | USFirstGirls',
 		'newBlogPost' => 'New Blog Post - Admin Panel | USFirstGirls',
+		'upload'      => 'Upload a File - Admin Panel | USFirstGirls',
 		'user'        => '%s - Admin Panel | USFirstGirls',
 		'users'       => 'Users - Admin Panel | USFirstGirls',
 	),

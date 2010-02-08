@@ -15,6 +15,10 @@ $lang = array(
 				'newDesc'   => 'New forum description',
 				'newName'   => 'New forum name',
 			),
+			'upload' => array(
+				'file' => 'File',
+				'button' => 'Upload file(s)',
+			),
 			'user' => array(
 				'button'       => 'Update user',
 				'searchfield'  => 'Username or email address',
@@ -29,6 +33,7 @@ $lang = array(
 			'title' => 'Topic Title',
 		),
 		'nickname' => 'Nickname',
+		'no' => 'No',
 		'password' => 'Password',
 		'signin' => 'Sign In',
 		'signup' => 'Sign Up',
@@ -48,6 +53,7 @@ $lang = array(
 			'website'   => 'Team Website',
 		),
 		'save' => 'Save',
+		'yes' => 'Yes',
 	),
 	'placeholder' => array(
 		'blank' => '',
