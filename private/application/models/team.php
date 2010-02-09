@@ -20,8 +20,12 @@ class Team_Model extends ORM {
 		// When teams change, update our denormalized data table
 		$teamCount  = $this->db->query('SELECT count(*) AS count FROM teams')->current()->count;
 		$addedCount = $this->db->query('SELECT sum(recruited) AS sum FROM teams')->current()->sum;
+		$girlCount = $this->db->query('SELECT sum(girls) AS girls FROM teams')->current()->girls;
+		$studentCount = $this->db->query('SELECT sum(size) AS size FROM teams')->current()->size;
 		ORM::factory('data', 'teamCount')->setTo($teamCount)->save();
 		ORM::factory('data', 'addedCount')->setTo($addedCount)->save();
+		ORM::factory('data', 'girlCount')->setTo($girlCount)->save();
+		ORM::factory('data', 'studentCount')->setTo($studentCount)->save();
 
 		return $return;
 	} // function save
