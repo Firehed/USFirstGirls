@@ -6,6 +6,7 @@ abstract class Template_Controller extends Controller {
 	// public $rawScripts = array();
 
 	protected $titleValues = array();
+	protected $links       = array();
 	
 	public function __construct() {
 		parent::__construct();
@@ -30,6 +31,12 @@ abstract class Template_Controller extends Controller {
 			$this->template->scripts .= file_get_contents(APPPATH . 'views/' . $script) . "\n";
 		}
 		*/
+		$links = '';
+		foreach ($this->links as $link) {
+			$links .= "<link rel=\"{$link['rel']}\" href=\"{$link['href']}\" title=\"{$link['title']}\" type=\"{$link['type']}\" />\n";
+		}
+		$this->template->links = $links;
+		
 		
 		$this->template->errors = $this->session->get('errors');
 		$this->template->messages = $this->session->get('messages');
@@ -41,6 +48,15 @@ abstract class Template_Controller extends Controller {
 		$this->template->render(true);
 		
 	} // function _render
+	
+	public function _link($href, $type, $rel = 'alternate', $title = '') {
+		$this->links[] = array(
+			'href'  => $href,
+			'type'  => $type,
+			'rel'   => $rel,
+			'title' => $title
+		);
+	} // function _link
 	
 /*
 	protected function rawScript($js) {

@@ -2,8 +2,9 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<base href="<?php echo url::base(); ?>" />
-		<title><?php echo $title; ?></title>
+		<base href="<?=url::base()?>" />
+		<title><?=$title?></title>
+		<?=$links?>
 		<link rel="stylesheet" href="style.css" type="text/css" />
 		<link rel="shortcut icon" href="favicon.ico" />
 		<style type="text/css" media="screen">
