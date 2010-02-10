@@ -7,7 +7,7 @@
 	</nav>
 	<nav class="grid_4 omega">
 		<?php if ($this->user): ?>
-		<a href="#foo">Reply to this topic</a>	
+		<a href="<?=url::current()?>#reply">Reply to this topic</a>	
 		<?php else: ?>
 		<a href="signin"  title="<?php echo Kohana::lang('site.nav.signin.title');  ?>"><?php echo Kohana::lang('site.nav.signin.anchor');  ?></a> or 
 		<a href="signup"  title="<?php echo Kohana::lang('site.nav.signup.title');  ?>"><?php echo Kohana::lang('site.nav.signup.anchor');  ?></a> to reply.
@@ -35,7 +35,7 @@
 
 <?php if ($this->user): ?>
 <?=form::open(null, 'grid_7 prefix_2 suffix_3')?>
-<p>Reply to this topic:</p>
+<p id="reply">Reply to this topic:</p>
 <?=form::textarea('forum.body','body')?>
 <?=form::submit('forum.reply')?>
 <?=form::close();?>
