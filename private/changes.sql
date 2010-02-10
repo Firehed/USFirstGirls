@@ -40,3 +40,13 @@ CREATE TABLE `files` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 2010-02-10
+CREATE TABLE `forumTopicSubscriptions` (
+  `forum_topic_id` int(11) unsigned NOT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  KEY `user_id` (`user_id`),
+  KEY `forum_topic_id` (`forum_topic_id`),
+  CONSTRAINT `forumtopicsubscriptions_ibfk_3` FOREIGN KEY (`forum_topic_id`) REFERENCES `forum_topics` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `forumtopicsubscriptions_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

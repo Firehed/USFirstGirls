@@ -31,6 +31,12 @@ class Forum_Topic_Model extends ORM {
 	protected $has_many = array(
 		'forum_posts'
 	);
+	
+	protected $has_and_belongs_to_many = array(
+		'forumTopicSubscriptions' => 'users'
+	);
+
+	
 
 	public function delete($lowerPostCount = false) {
 		$forum = $this->forum;
@@ -42,6 +48,15 @@ class Forum_Topic_Model extends ORM {
 
 		return parent::delete();
 	} // function delete
+	
+	public function getSubscriptionLink(User_Model $user) {
+		if ($this->has($user)) {
+			return "<a href=\"forum/unsubscribe/{$this->id}\">Unsubscribe</a>";
+		}
+		else {
+			return "<a href=\"forum/subscribe/{$this->id}\">Subscribe</a>";
+		}
+	} // function getSubscriptionLink
 	
 	public function getTimeCreatedW3C() {
 		return date(DateTime::W3C, $this->object['timeCreated']);

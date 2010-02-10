@@ -62,6 +62,30 @@ class Forum_Controller extends Template_Controller {
 		}
 	} // function reply
 	
+	public function subscribe($topicId) {
+		if (!$this->user) {
+			$this->error('errors.topic.subscribe');
+			url::redirect('signin');
+		}
+		$topic = ORM::factory('forum_topic', $topicId);
+		$topic->add($this->user);
+		$topic->save();
+		$this->message(Kohana::lang('messages.topic.subscribed'));
+		url::redirect(request::referrer());
+	} // function subscribe
+	
+	public function unsubscribe($topicId) {
+		if (!$this->user) {
+			$this->error('errors.topic.unsubscribe');
+			url::redirect('signin');
+		}
+		$topic = ORM::factory('forum_topic', $topicId);
+		$topic->remove($this->user);
+		$topic->save();
+		$this->message(Kohana::lang('messages.topic.unsubscribed'));
+		url::redirect(request::referrer());
+	} // function unsubscribe
+	
 	public function topic($topicId = null) {
 		$topic = ORM::factory('forum_topic', $topicId);
 		

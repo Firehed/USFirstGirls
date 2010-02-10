@@ -17,6 +17,8 @@ $lang = array(
 		'signup' => 'Registration successful - thanks for signing up!',
 	),
 	'topic' => array(
-		'reply' => 'Reply added.',
+		'reply'        => 'Reply added.',
+		'subscribed'   => 'You will now receive email notifications when people respond to this thread.',
+		'unsubscribed' => 'You will no longer receive email notifications when people respond to this thread.',
 	),
 );

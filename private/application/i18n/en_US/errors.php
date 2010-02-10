@@ -19,4 +19,9 @@ $lang = array(
 		'edit'  => 'You must be logged in to edit your team\'s profile.',
 		'index' => 'You must be logged in to view your team\'s profile.',
 	),
+	'topic' => array(
+		'subscribe'   => 'You must log in to subscribe to a thread.',
+		'unsubscribe' => 'You must log in to unsubscribe from a thread.',
+	),
+	
 );

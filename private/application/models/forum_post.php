@@ -67,6 +67,45 @@ class Forum_Post_Model extends ORM {
 			
 				$this->forum_topic->forum->postCount ++;
 				$this->forum_topic->forum->save();
+				
+				foreach ($this->forum_topic->users as $user) {
+					// Do not send user a notification of thier own reply.
+					if ($user->id == $this->user_id) {
+						continue;
+					}
+
+					$url = url::base() . "forum/topic/$this->forum_topic_id";
+					$unsubscribe = url::base() . "forum/unsubscribe/$this->forum_topic_id";
+					
+					$to      = $user->email;  // Address can also be array('to@example.com', 'Name')
+					$from    = array('notifications@usfirstgirls.org', 'USFirstGirls.org Forums');
+					$subject = 'Reply to thread "' . $this->forum_topic->title . '" at USFirstGirls.org';
+					$message = <<<MESSAGE
+$user->name,
+
+{$this->user->name} has just replied to a thread you have subscribed to at USFirstGirls.org.
+
+This thread is located at:
+$url
+
+Here is the message that has just been posted:
+***************
+$this->body
+***************
+
+USFirstGirls.org Forums
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unsubscription information:
+
+To unsubscribe from this thread, please visit this page:
+$unsubscribe
+				
+MESSAGE;
+
+					email::send($to, $from, $subject, $message);
+				}
+				
 			}
 			return $this;
 		}

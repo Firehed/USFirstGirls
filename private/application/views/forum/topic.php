@@ -7,7 +7,7 @@
 	</nav>
 	<nav class="grid_4 omega">
 		<?php if ($this->user): ?>
-		<a href="<?=url::current()?>#reply">Reply to this topic</a>	
+		<a href="<?=url::current()?>#reply">Reply to this topic</a> | <?=$topic->getSubscriptionLink($this->user)?>
 		<?php else: ?>
 		<a href="signin"  title="<?php echo Kohana::lang('site.nav.signin.title');  ?>"><?php echo Kohana::lang('site.nav.signin.anchor');  ?></a> or 
 		<a href="signup"  title="<?php echo Kohana::lang('site.nav.signup.title');  ?>"><?php echo Kohana::lang('site.nav.signup.anchor');  ?></a> to reply.
