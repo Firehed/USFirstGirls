@@ -5,6 +5,10 @@ $lang = array(
 			'anchor'     => 'Blog Posts',
 			'title'      => 'Manage blog posts',
 		),
+		'emailList' => array(
+			'anchor'    => 'Email List',
+			'title'     => 'List of user email addresses',
+		),
 		'forums' => array(
 			'anchor'    => 'Forums',
 			'title'     => 'Manage forums',

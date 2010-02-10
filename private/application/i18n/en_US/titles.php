@@ -3,6 +3,7 @@ $lang = array(
 	'admin' => array(
 		'blog'        => '%s - Admin Panel | USFirstGirls',
 		'blogs'       => 'Blogs - Admin Panel | USFirstGirls',
+		'emailList'   => 'Registered User Email List | USFirstGirls',
 		'fileDelete'  => 'Delete a File - Admin Panel | USFirstGirls',
 		'files'       => 'File Management - Admin Panel | USFirstGirls',
 		'forums'      => 'Forums - Admin Panel | USFirstGirls',

@@ -7,6 +7,7 @@ class Admin_Controller extends Template_Controller {
 	protected static $actions = array(
 		'blog'        => array('admin','blogger'),
 		'blogs'       => array('admin','blogger'),
+		'emailList'   => array('admin'),
 		'fileDelete'  => array('admin'),
 		'files'       => array('admin'),
 		'forums'      => array('admin'),
@@ -18,7 +19,7 @@ class Admin_Controller extends Template_Controller {
 	);
 
 	// Sidebar is populated with these
-	public $pages = array('index', 'blogs', 'newBlogPost','forums', 'users', 'files', 'upload'); 
+	public $pages = array('index', 'blogs', 'newBlogPost','forums', 'users', 'files', 'upload', 'emailList'); 
 	
 	public function __construct() {
 		parent::__construct();
@@ -80,6 +81,10 @@ class Admin_Controller extends Template_Controller {
 		));
 		
 	} // function blogs
+	
+	public function emailList() {
+		$this->tpl->users = ORM::factory('user')->select('email')->find_all();
+	} // function emailList
 	
 	public function fileDelete($fileId = null) {
 		$file = ORM::factory('file', $fileId);
