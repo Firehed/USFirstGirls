@@ -22,7 +22,7 @@ class Controller extends Controller_Core {
 		}
 		if ($this->requiresLogin AND !$this->user) {
 			$this->session->set('referrer', url::current());
-			url::redirect('session/login');
+			url::redirect('session/signin');
 		}
 		
 	} // function __construct

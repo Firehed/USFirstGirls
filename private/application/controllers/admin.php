@@ -3,6 +3,8 @@ class Admin_Controller extends Template_Controller {
 	
 	const blogPostsPerPage = 10;
 	
+	protected $requiresLogin = true;
+	
 	// Permissions for the pages
 	protected static $actions = array(
 		'blog'        => array('admin','blogger'),
