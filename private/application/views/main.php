@@ -258,7 +258,20 @@ display: inline;
 				<li>© 2009-<?=date('Y')?> USFirstGirls.org.</li>
 				<li>Site built by <a href="http://www.eric-stern.com" title="Eric Stern - New England Web Developer and Photographer">Eric Stern</a>.</li>
 			</ul>
-			<p class="grid_4"><a href="https://www.wepay.com/public/donate/394" title="Donate with WePay" target="_blank"><img src="https://www.wepay.com/img/donate.png" height="46" width="231" alt="Donate with WePay" /></a></p>
+			<p class="grid_4">
+				<a 
+href="https://www.wepay.com/public/donate/394" 
+title="Donate 
+with WePay" target="_blank">
+					<img 
+src="https://www.wepay.com/img/donate.png" 
+height="46" 
+width="231" alt="Donate with WePay" />
+				</a>
+				<br />
+				<a 
+href="blog/post/donate-learn-more">Learn more about donating.</a>
+			</p>
 		</footer>
 		<!-- Google Analytics -->
 		<script type="text/javascript">
