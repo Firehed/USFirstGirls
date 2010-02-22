@@ -10,3 +10,4 @@ $config['signin']   = 'session/signin';
 $config['signout']  = 'session/signout';
 $config['signup']   = 'session/signup';
 
+$config['donate']   = 'blog/post/donate-learn-more';
