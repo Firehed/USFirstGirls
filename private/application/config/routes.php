@@ -11,3 +11,4 @@ $config['signout']  = 'session/signout';
 $config['signup']   = 'session/signup';
 
 $config['donate']   = 'blog/post/donate-learn-more';
+$config['contact']  = 'blog/post/contact-us';
