@@ -5,7 +5,7 @@
 		<base href="<?=url::base()?>" />
 		<title><?=$title?></title>
 		<?=$links?>
-		<link rel="stylesheet" href="style.css" type="text/css" />
+		<link rel="stylesheet" href="style.css?<?=filemtime(DOCROOT.'style.css')?>" type="text/css" />
 		<link rel="shortcut icon" href="favicon.ico" />
 		<script>
 			// HTML5 "shiv"
