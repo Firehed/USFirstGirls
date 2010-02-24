@@ -33,20 +33,15 @@
 					</nav>
 					<h2 class="grid_9 alpha omega" id="callToAction"><?php echo Kohana::lang('site.home.callToAction'); ?></h2>
 				</div>
-			<?php if ($errors): ?>
-				<ul id="alerts">
-				<?php foreach ($errors as $error): ?>
-					<li><?php echo $error; ?></li>
-				<?php endforeach; ?>
-				</ul>
-			<?php endif; ?>
-			<?php if ($messages): ?>
-				<ul id="successMessages">
-				<?php foreach ($messages as $message): ?>
-					<li><?php echo $message; ?></li>
-				<?php endforeach; ?>
-				</ul>
-			<?php endif; ?>
+
+<?php if ($errors): ?>
+				<ul id="alerts"><?php foreach ($errors as $error): ?><li><?php echo $error; ?></li><?php endforeach; ?></ul>
+<?php endif; ?>
+
+<?php if ($messages): ?>
+				<ul id="successMessages"><?php foreach ($messages as $message): ?><li><?php echo $message; ?></li><?php endforeach; ?></ul>
+<?php endif; ?>
+
 			</header>
 
 			<section id="main" class="container_12">
