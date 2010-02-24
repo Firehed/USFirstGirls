@@ -21,6 +21,7 @@ class Team_Controller extends Template_Controller {
 			$team->girls     = $this->input->post('girlsOnTeam');
 			$team->size      = $this->input->post('teamSize');
 			if ($team->save()) {
+				$this->message('team.edit');
 				url::redirect('profile');
 			}
 			else {

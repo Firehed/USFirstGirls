@@ -19,6 +19,7 @@ class Profile_Controller extends Template_Controller {
 			$this->user->team_number = $this->input->post('teamNumber');
 			$this->user->name        = $this->input->post('name');
 			if ($this->user->save()) {
+				$this->message('profile.edit');
 				url::redirect('profile');
 			}
 			else {
