@@ -61,12 +61,12 @@ button {
 }
 
 /* END OF RESETS */
-
 body {
 	background-color: #5F0E84;
 	color: #FFF;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 10pt;
+	overflow-y:scroll;
 }
 b,strong{
 	font-weight: bold;
