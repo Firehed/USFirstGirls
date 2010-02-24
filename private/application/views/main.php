@@ -63,13 +63,28 @@
 				<li><a href="donate">Learn more about donating</a></li>
 			</ul>
 		</footer>
-<?php if ($JS): ?>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
 		<script type="text/javascript" charset="utf-8">//<![CDATA[
+// JS on all pages
+$(function(){
+	// Javascript detection
+	if ($("body#js_unknown").length == 1) {
+		$("body").attr('id', 'js_on');
+		$.get('ajax/jsSupport');
+	}
+
+	// Alert message flash
+	$("#alerts").slideDown('slow').prependTo($('body')).delay($('#alerts li').length * 2500).slideUp('slow');
+
+	// Success message flash
+	$("#successMessages").slideDown('slow').prependTo($('body')).delay($('#successMessages li').length * 2500).slideUp('slow');
+
+});
+
+// Any additional per-page JS
 <?=$JS?>
 
 		//]]></script>
-<?php endif; ?>
 		
 		<!-- Google Analytics -->
 		<script type="text/javascript">
