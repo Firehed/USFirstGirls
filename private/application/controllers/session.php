@@ -2,6 +2,13 @@
 class Session_Controller extends Template_Controller {
 	
 	public function signin() {
+		if (!$this->session->get('referrer')) {
+			$referrer = request::referrer();
+			if (Router::$current_uri != $referrer AND Router::$routed_uri != $referrer) {
+				$this->session->set('referrer', $referrer);
+			}
+		}
+		
 		if (form::valid()) {
 			if ($this->auth->login($this->input->post('username'), $this->input->post('password'), true)) {
 				url::redirect($this->session->get_once('referrer'), '');
