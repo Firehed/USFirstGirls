@@ -78,6 +78,10 @@ class User_Model extends ORM {
 	public function delete() {
 		return false;
 	} // function delete
+
+	public function getAvatarUrl() {
+		return 'http://www.gravatar.com/avatar/' . md5($this->email) . '.jpg?r=g&amp;s=50';
+	} // function getAvatarHtml
 	
 	public function getName() {
 		return $this->object['name'] ? $this->object['name'] : substr($this->email, 0, strpos($this->email, '@'));
