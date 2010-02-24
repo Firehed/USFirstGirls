@@ -118,7 +118,10 @@ class User_Model extends ORM {
 	} // function setTeam_number
 
 	public function unique_key($id) {
-		return is_numeric($id) ? parent::unique_key($id) : 'email';
+		if (valid::email($id)) {
+			return 'email';
+		}
+		return is_numeric($id) ? parent::unique_key($id) : 'name';
 	} // function unique_key
 
 } // class User Model
