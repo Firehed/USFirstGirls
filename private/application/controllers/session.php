@@ -11,6 +11,12 @@ class Session_Controller extends Template_Controller {
 		
 		if (form::valid()) {
 			if ($this->auth->login($this->input->post('username'), $this->input->post('password'), true)) {
+				if ($this->input->post('js') == 'on') {
+					$this->session->set('js', 'on');
+				}
+				else {
+					$this->session->set('js', 'off');
+				}
 				$this->message('session.signin');
 				url::redirect($this->session->get_once('referrer'), '');
 			}
