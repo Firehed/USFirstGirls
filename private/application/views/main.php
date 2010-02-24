@@ -20,7 +20,7 @@
 		<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
 		<![endif]-->
 	</head>
-	<body>
+	<body id="js_<?=$this->session->get('js', 'unknown')?>">
 		<div id="pushWrapper">
 			<header id="top" class="container_12">
 				<a href="" title="<?php echo Kohana::lang('site.nav.home.title'); ?>"><img src="img/logoColoredSquares.gif" width="220" height="147" alt="US FIRST Logo" class="grid_3"/></a>
@@ -63,6 +63,14 @@
 				<li><a href="donate">Learn more about donating</a></li>
 			</ul>
 		</footer>
+<?php if ($JS): ?>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" charset="utf-8">//<![CDATA[
+<?=$JS?>
+
+		//]]></script>
+<?php endif; ?>
+		
 		<!-- Google Analytics -->
 		<script type="text/javascript">
 			var _gaq = _gaq || [];

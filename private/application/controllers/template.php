@@ -19,18 +19,20 @@ abstract class Template_Controller extends Controller {
 	} // function __construct
 	
 	public function _render() {
-		// header('Connection: close'); // This should fix a bug with Safari file uploads...
 		$this->template->title   = Kohana::lang('titles.' . Router::$controller . '.' . Router::$method, $this->titleValues);
-		/*
+
 		// Per-page javascript support
-		$this->template->scripts = '';
-		foreach ($this->rawScripts as $js) {
-			$this->template->scripts .= $js;
+		// Todo: cache this information? Compress it? Write it out?
+		$JS = '';
+		if (file_exists(APPPATH.'views/'.Router::$controller.'.js')) {
+			$JS .= file_get_contents(APPPATH.'views/'.Router::$controller.'.js');
 		}
-		foreach ($this->scripts as $script) {
-			$this->template->scripts .= file_get_contents(APPPATH . 'views/' . $script) . "\n";
+		if (file_exists(APPPATH.'views/'.Router::$controller.'/'.Router::$method.'.js')) {
+			$JS .= file_get_contents(APPPATH.'views/'.Router::$controller.'/'.Router::$method.'.js');
 		}
-		*/
+		$this->template->JS = $JS;
+
+		// Per-page links in <head>
 		$links = '';
 		foreach ($this->links as $link) {
 			$links .= "<link rel=\"{$link['rel']}\" href=\"{$link['href']}\" title=\"{$link['title']}\" type=\"{$link['type']}\" />\n";
@@ -40,10 +42,10 @@ abstract class Template_Controller extends Controller {
 		
 		$this->template->errors = $this->session->get('errors');
 		$this->template->messages = $this->session->get('messages');
+
 		// Strictly speaking this shouldn't be necessary, but set_flash is a little flaky for same-page behavior
 		$this->session->delete('errors');
 		$this->session->delete('messages');
-		
 		
 		$this->template->render(true);
 		
