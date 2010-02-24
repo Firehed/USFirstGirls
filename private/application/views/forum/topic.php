@@ -34,7 +34,7 @@
 </div> <!-- div .grid_3 -->
 
 <?php if ($this->user): ?>
-<?=form::open(null, 'grid_7 prefix_2 suffix_3')?>
+<?=form::open(null, 'grid_9 suffix_3')?>
 <p id="reply">Reply to this topic:</p>
 <?=form::textarea('forum.body','body')?>
 <?=form::submit('forum.reply')?>

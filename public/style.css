@@ -22,14 +22,26 @@ header,footer,article,section,aside,nav{display:block;}
 
 /* @group Forms and DLs */
 label,button{cursor:pointer;}
+input,textarea{background:#F8F8F8;border:1px solid #000;}
 label,input[type=text],input[type=url],input[type=email],input[type=password],input[type=file],input[type=checkbox],select,textarea,dd,dt{margin-bottom:1em;}
-label,dt{display:block;clear:left;float:left;width:40%;text-align:right;padding-right:5%}
+label,dt{display:block;clear:left;float:left;width:40%;text-align:right;padding: 5px 5% 5px 0;}
 label:after,dt:after{content:":";}
-input[type=text],input[type=url],input[type=email],input[type=password],input[type=file],select,textarea,dd{float:left;width:50%}
+input[type=text],input[type=url],input[type=email],input[type=password],input[type=file],select,textarea,dd{float:left;width:50%;padding:5px 0 5px 5px;}
 input[type=checkbox]{float:left;}
-button{margin-left:45%;float:left;clear:left;}
-textarea{height:10em;resize:vertical;}
+textarea{height:15em;resize:vertical;}
+input:focus,textarea:focus{background:#D8FFD8;}
 dl,fieldset{overflow:auto;}
+button{
+	background-color:#9D6CB4;
+	color:#FFF;
+	clear:left;
+	float:left;
+	margin-left:45%;
+	padding:5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+button:focus{background-color:#C588E4;color:#000;}
 /* @end */
 
 .container_12{margin-left:auto;margin-right:auto;width:960px;}
@@ -42,8 +54,8 @@ dl,fieldset{overflow:auto;}
 .suffix_1{padding-right:80px;}.suffix_2{padding-right:160px;}.suffix_3{padding-right:240px;}.suffix_4{padding-right:320px;}.suffix_5{padding-right:400px;}.suffix_6{padding-right:480px;}.suffix_7{padding-right:560px;}.suffix_8{padding-right:640px;}.suffix_9{padding-right:720px;}.suffix_10{padding-right:800px;}.suffix_11{padding-right:880px;}
 
 table{width:100%;}
-input,textarea{border:1px solid #999;}
-input:focus,textarea:focus{border-color:#000;}
+/*input,textarea{border:1px solid #999;}*/
+/*input:focus,textarea:focus{border-color:#000;}*/
 thead th{border-bottom: 2px solid #888;}
 tbody tr:nth-child(odd){background-color:#EEE;}
 tbody tr:nth-child(even){background-color:#DDD;}
@@ -52,13 +64,6 @@ td,th{padding:5px;}
 th{font-weight:bold;}
 
 
-button {
-	background-color:#9d6cb4;
-	color:#FFF;
-	padding:5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-}
 
 /* END OF RESETS */
 body {
