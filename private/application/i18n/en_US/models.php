@@ -33,6 +33,9 @@ $lang = array(
 			'inuse'   => 'That email address is already in use.',
 			'invalid' => 'That does not appear to be a valid email address.',
 		),
+		'name' => array(
+			'inuse' => 'That nickname is already in use by another forum member.',
+		),
 		'password' => array(
 			'invalid' => 'Passwords must be at least 6 characters long (but more is better)',
 		),

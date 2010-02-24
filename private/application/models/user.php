@@ -83,11 +83,6 @@ class User_Model extends ORM {
 		return $this->object['name'] ? $this->object['name'] : substr($this->email, 0, strpos($this->email, '@'));
 	} // function getName
 	
-/*
-	public function can($action, RoleEnforcer $enforcer) {
-		return permissions::can($this, $action, $enforcer);
-	} // function can
-*/
 	public function setEmail($email) {
 		if (!trim($email)) {
 			throw new ValidationException('models.user.email.blank');
@@ -100,6 +95,14 @@ class User_Model extends ORM {
 		}
 		return strtolower($email);
 	} // function setEmail
+
+	public function setName($name) {
+		$testUser = ORM::factory('user', $name);
+		if ($testUser->loaded AND $testUser->id != $this->id) {
+			throw new ValidationException('models.user.name.inuse');
+		}
+		return $name;
+	} // function setName
 	
 	public function setPassword($password) {
 		if (strlen($password) < 6) {
