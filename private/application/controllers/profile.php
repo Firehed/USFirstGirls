@@ -2,7 +2,7 @@
 class Profile_Controller extends Template_Controller {
 	public function index() {
 		if (!$this->user) {
-			$this->error(Kohana::lang('errors.profile.index'));
+			$this->error('profile.index');
 			url::redirect('');
 		}
 		$this->tpl->user = $this->user;
@@ -11,7 +11,7 @@ class Profile_Controller extends Template_Controller {
 
 	public function edit() {
 		if (!$this->user) {
-			$this->error(Kohana::lang('errors.profile.edit'));
+			$this->error('profile.edit');
 			url::redirect('');
 		}
 		

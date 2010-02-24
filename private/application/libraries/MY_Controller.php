@@ -32,7 +32,7 @@ class Controller extends Controller_Core {
 			$this->errors = array_merge($this->errors, $message);
 		}
 		else {
-			$this->errors[] = $message;
+			$this->errors[] = Kohana::lang('errors.' . $message);
 		}
 		$this->session->set('errors', $this->errors);
 		
@@ -43,7 +43,7 @@ class Controller extends Controller_Core {
 			$this->messages = array_merge($this->messages, $message);
 		}
 		else {
-			$this->messages[] = $message;
+			$this->messages[] = Kohana::lang('messages.' . $message);
 		}
 		$this->session->set('messages', $this->messages);
 		

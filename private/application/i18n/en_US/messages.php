@@ -5,6 +5,10 @@ $lang = array(
 			'created' => 'Blog post created!',
 			'saved'   => 'Blog post saved!',
 		),
+		'file' => array(
+			'deleted'  => 'File deleted.',
+			'uploaded' => 'File uploaded.',
+		),
 		'user' =>  array(
 			'updated' => 'User successfully updated!',
 		),
@@ -14,6 +18,7 @@ $lang = array(
 		'newTopic' => 'New topic created.',
 	),
 	'session' => array(
+		'signin' => 'You\'ve signed in successfully. Welcome back!',
 		'signup' => 'Registration successful - thanks for signing up!',
 	),
 	'topic' => array(

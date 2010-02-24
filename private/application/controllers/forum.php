@@ -16,7 +16,7 @@ class Forum_Controller extends Template_Controller {
 	public function newTopic($forumId = null) {
 		$forum = ORM::factory('forum', $forumId);
 		if (!$this->user) {
-			$this->error(Kohana::lang('errors.forum.newTopic'));
+			$this->error('forum.newTopic');
 			url::redirect(request::referrer());
 		}
 		if (form::valid()) {
@@ -30,7 +30,7 @@ class Forum_Controller extends Template_Controller {
 				$post->body           = $this->input->post('body');
 				$post->user_id        = $this->user->id;
 				if ($post->save()) {
-					$this->message(Kohana::lang('messages.forum.newTopic'));
+					$this->message('forum.newTopic');
 					url::redirect('forum/topic/' . $topic->id);
 				}
 				else {
@@ -47,7 +47,7 @@ class Forum_Controller extends Template_Controller {
 	
 	protected function reply($topicId) {
 		if (!$this->user) {
-			$this->error(Kohana::lang('errors.forum.reply'));
+			$this->error('forum.reply');
 			return;
 		}
 		$post = new Forum_Post_Model;
@@ -55,7 +55,7 @@ class Forum_Controller extends Template_Controller {
 		$post->body           = $this->input->post('body');
 		$post->forum_topic_id = $topicId;
 		if ($post->save()) {
-			$this->message(Kohana::lang('messages.topic.reply'));
+			$this->message('topic.reply');
 		}
 		else {
 			$this->error($post->exceptions);
@@ -70,7 +70,7 @@ class Forum_Controller extends Template_Controller {
 		$topic = ORM::factory('forum_topic', $topicId);
 		$topic->add($this->user);
 		$topic->save();
-		$this->message(Kohana::lang('messages.topic.subscribed'));
+		$this->message('topic.subscribed');
 		url::redirect(request::referrer());
 	} // function subscribe
 	
@@ -82,7 +82,7 @@ class Forum_Controller extends Template_Controller {
 		$topic = ORM::factory('forum_topic', $topicId);
 		$topic->remove($this->user);
 		$topic->save();
-		$this->message(Kohana::lang('messages.topic.unsubscribed'));
+		$this->message('topic.unsubscribed');
 		url::redirect(request::referrer());
 	} // function unsubscribe
 	

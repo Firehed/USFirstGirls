@@ -1,7 +1,9 @@
 <?php
 $lang = array(
 	'admin' => array(
-		'userWasBlank' => 'No user specified',
+		'uploadNoFile' => 'No file uploaded.',
+		'uploadError'  => 'Error processing file.',
+		'userWasBlank' => 'No user specified.',
 		'userNotFound' => 'No user with that username or email address was found.',
 	),
 	'forum' => array(

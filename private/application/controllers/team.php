@@ -3,7 +3,7 @@ class Team_Controller extends Template_Controller {
 
 	public function edit() {
 		if (!$this->user) {
-			$this->error(Kohana::lang('errors.team.edit'));
+			$this->error('team.edit');
 			url::redirect('');
 		}
 		

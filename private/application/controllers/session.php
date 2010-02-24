@@ -11,10 +11,11 @@ class Session_Controller extends Template_Controller {
 		
 		if (form::valid()) {
 			if ($this->auth->login($this->input->post('username'), $this->input->post('password'), true)) {
+				$this->message('session.signin');
 				url::redirect($this->session->get_once('referrer'), '');
 			}
 			else {
-				$this->error(Kohana::lang('errors.session.signin'));
+				$this->error('session.signin');
 			}
 		}
 	} // function singin
@@ -33,7 +34,7 @@ class Session_Controller extends Template_Controller {
 			
 			if ($user->add(ORM::factory('role', 'login')) AND $user->save()) {
 				$this->auth->login($this->input->post('email'), $this->input->post('password'));
-				$this->message(Kohana::lang('messages.session.signup'));
+				$this->message('session.signup');
 				url::redirect('team/edit');
 			}
 			else {

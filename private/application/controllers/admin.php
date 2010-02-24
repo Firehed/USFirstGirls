@@ -57,7 +57,7 @@ class Admin_Controller extends Template_Controller {
 			$post->body      = markdown::parse($this->input->post('body'));
 			
 			if ($post->save()) {
-				$this->message(Kohana::lang('messages.admin.blogpost.saved'));
+				$this->message('admin.blogpost.saved');
 				url::redirect('admin/blogs');
 			}
 			else {
@@ -93,7 +93,7 @@ class Admin_Controller extends Template_Controller {
 		
 		if (form::valid()) {
 			$file->delete();
-			$this->message('File deleted.');
+			$this->message('admin.file.deleted');
 			url::redirect('admin/files');
 		}
 		$this->tpl->file = $file;
@@ -111,7 +111,7 @@ class Admin_Controller extends Template_Controller {
 			$forum->name = $this->input->post('name');
 			$forum->description = $this->input->post('description');
 			if ($forum->save()) {
-				$this->message(Kohana::lang('messages.forum.newForum'));
+				$this->message('forum.newForum');
 			}
 			else {
 				$this->error($forum->exceptions);
@@ -135,7 +135,7 @@ class Admin_Controller extends Template_Controller {
 			$post->user_id   = $this->user->id;
 			
 			if ($post->save()) {
-				$this->message(Kohana::lang('messages.admin.blogpost.created'));
+				$this->message('admin.blogpost.created');
 				url::redirect('admin/blogs/');
 			}
 			else {
@@ -149,14 +149,14 @@ class Admin_Controller extends Template_Controller {
 		if (form::valid()) {
 			$upload = $_FILES['file'];
 			if ($upload['error'] == UPLOAD_ERR_OK AND $file = File_Model::upload($upload)) {
-				$this->message('File uploaded.');
+				$this->message('admin.file.uploaded');
 				url::redirect("admin/files/#file_$file->id");
 			}
 			elseif ($upload['error'] == UPLOAD_ERR_NO_FILE) {
-				$this->error('No file uploaded.');
+				$this->error('admin.uploadNoFile');
 			}
 			else {
-				$this->error('Error processing file.');
+				$this->error('admin.uploadError');
 				Kohana::log('error', 'Error uploading file in admin panel, status code: ' . $upload['error']);
 			}
 		}
@@ -188,7 +188,7 @@ class Admin_Controller extends Template_Controller {
 	public function users() {
 		if (form::valid()) {
 			if (!$this->input->post('search')) {
-				$this->error(Kohana::lang('errors.admin.userWasBlank'));
+				$this->error('admin.userWasBlank');
 			}
 			else {
 				$user = ORM::factory('user', $this->input->post('search'));
@@ -196,7 +196,7 @@ class Admin_Controller extends Template_Controller {
 					url::redirect('admin/user/' . $user->id);
 				}
 				else {
-					$this->error(Kohana::lang('errors.admin.userNotFound'));
+					$this->error('admin.userNotFound');
 				}
 				
 			}
