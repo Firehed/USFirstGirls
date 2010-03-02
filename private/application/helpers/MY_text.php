@@ -1,5 +1,28 @@
 <?php
 class text extends text_Core {
+	
+	public static function autoLinkUrls($text) {
+		$text = preg_replace_callback(
+			'/(?xi)\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.])(?:[^\s()<>]+|\([^\s()<>]+\))+(?:\([^\s()<>]+\)|[^`!()\[\]{};:\'".,<>?«»“”‘’\s]))/',
+			array('text','addLink'),
+			$text
+		);
+		return $text;
+	} // function auto_link_urls
+	
+	/**
+	 * Special regex callback for autoLinkUrls to prepend http:// where protocol is unspecified (www.example.com)
+	**/
+	private static function addLink($text) {
+		if (preg_match('/:\/{1,3}/', $text[0]) == 0) {
+			$url = 'http://' . $text[0];
+		}
+		else {
+			$url = $text[0];
+		}
+		return "<a href=\"$url\">$text[0]</a>";
+	} // function addLink
+	
 	public static function bytes($bytes, $force_unit = NULL, $format = NULL, $si = TRUE) {
 		if ($bytes <= 1024) {
 			return "$bytes B";
@@ -59,4 +82,5 @@ class text extends text_Core {
 			
 		return date('F j, Y', $time);
 	} // function relativeTime
-}
+
+} // class text

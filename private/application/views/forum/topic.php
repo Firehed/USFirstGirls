@@ -25,7 +25,7 @@
 			
 			<span class="postTime">Posted <time datetime="<?php echo $post->timeCreatedW3C; ?>"><?php echo text::relativeTime($post->timeCreated); ?></time></span>
 		</footer>
-		<article class="grid_6 omega"><?php echo nl2br($post->body); ?></article>
+		<article class="grid_6 omega"><?php echo nl2br(text::autoLinkUrls($post->body)); ?></article>
 	</li>
 <?php endforeach; ?>
 </ul>
