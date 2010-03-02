@@ -181,6 +181,10 @@ a[target=_blank] {
 	color: #000;
 	font-size: 16px;
 	font-weight: bold;
+	z-index:2;
+	position:absolute;
+	left: 10px;
+	right: 10px;
 }
 #js_on #alerts li, #js_on #successMessages li {
 	margin-top: 10px;
