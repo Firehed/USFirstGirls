@@ -271,7 +271,9 @@ a[target=_blank] {
 	/* IE6 min-height hack */
 	height: auto !important; 
 	height: 90px;
+	overflow-x:hidden;
 }
+
 .pagination, .pagination a {
 	font-size: 9pt!important;
 }
