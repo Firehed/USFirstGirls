@@ -57,6 +57,7 @@
 			<ul class="grid_4">
 				<li>© 2009-<?=date('Y')?> USFirstGirls.org</li>
 				<li><a href="contact">Contact us</a></li>
+				<li>Join us on <a href="http://www.facebook.com/USFirstGirls" title="USFirstGirls on Facebook" target="_blank">Facebook</a> and <a href="http://twitter.com/USFirstGirls" title="USFirstGirls on Twitter" target="_blank">Twitter</a>!</li>
 			</ul>
 			<ul class="grid_4">
 				<li><a href="https://www.wepay.com/public/donate/394" title="Donate with WePay" target="_blank"><img src="https://www.wepay.com/img/donate.png" height="46" width="231" alt="Donate with WePay" /></a></li>
