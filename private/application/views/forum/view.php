@@ -15,7 +15,7 @@
 </header>
 <ul id="forumTopics" class="grid_12">
 <?php foreach ($topics as $topic): ?>
-	<li class="forumTopic">
+	<li class="forumTopic" id="topic<?=$topic->id?>">
 		<header>
 			<h2><a href="forum/topic/<?php echo $topic->id; ?>" title="<?php echo text::limit_words($topic->firstPost->body, 15); ?>"><?php echo $topic->title; ?></a></h2>
 			<span class="posts"><?php echo $topic->postCount; ?> <?php echo inflector::plural('post', $topic->postCount); ?></span>
