@@ -75,7 +75,7 @@ class User_Model extends ORM {
 	);
 	
 	// No deleting users.
-	public function delete() {
+	public function delete($id = null) {
 		return false;
 	} // function delete
 
