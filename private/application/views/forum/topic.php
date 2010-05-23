@@ -18,7 +18,7 @@
 
 <ul id="forumPosts" class="grid_9">
 <?php foreach ($posts as $post): ?>
-	<li class="forumPost">
+	<li class="forumPost" id="post<?=$post->id?>">
 		<footer class="grid_3 alpha">
 			<span class="poster"><?php echo $post->user->name; ?></span>
 			<img src="<?=$post->user->avatarUrl?>" height="50" width="50" alt="<?=$post->user->name?>" />
