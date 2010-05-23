@@ -13,6 +13,10 @@ $lang = array(
 			'anchor'    => 'Forums',
 			'title'     => 'Manage forums',
 		),
+		'forumPosts' => array(
+			'anchor'    => 'Forum Posts',
+			'title'     => 'Manage forum posts',
+		),
 		'files' => array(
 			'anchor'    => 'Manage Files',
 			'title'     => 'Manage uploaded files',

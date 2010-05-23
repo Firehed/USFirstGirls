@@ -14,8 +14,9 @@ $lang = array(
 		),
 	),
 	'forum' => array(
-		'newForum' => 'New forum created.',
-		'newTopic' => 'New topic created.',
+		'newForum'    => 'New forum created.',
+		'newTopic'    => 'New topic created.',
+		'postDeleted' => 'Forum post deleted.',
 	),
 	'profile' => array(
 		'edit' => 'You\'ve successfully updated your profile!',

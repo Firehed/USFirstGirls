@@ -2,26 +2,29 @@
 class Admin_Controller extends Template_Controller {
 	
 	const blogPostsPerPage = 10;
+	const forumPostsPerPage = 25;
 	
 	protected $requiresLogin = true;
 	
 	// Permissions for the pages
 	protected static $actions = array(
-		'blog'        => array('admin','blogger'),
-		'blogs'       => array('admin','blogger'),
-		'emailList'   => array('admin'),
-		'fileDelete'  => array('admin'),
-		'files'       => array('admin'),
-		'forums'      => array('admin'),
-		'index'       => array('admin','blogger'),
-		'newBlogPost' => array('admin','blogger'),
-		'upload'      => array('admin'),
-		'user'        => array('admin'),
-		'users'       => array('admin'),
+		'blog'            => array('admin','blogger'),
+		'blogs'           => array('admin','blogger'),
+		'emailList'       => array('admin'),
+		'fileDelete'      => array('admin'),
+		'files'           => array('admin'),
+		'forums'          => array('admin'),
+		'forumPostDelete' => array('admin'),
+		'forumPosts'      => array('admin'),
+		'index'           => array('admin','blogger'),
+		'newBlogPost'     => array('admin','blogger'),
+		'upload'          => array('admin'),
+		'user'            => array('admin'),
+		'users'           => array('admin'),
 	);
 
 	// Sidebar is populated with these
-	public $pages = array('index', 'blogs', 'newBlogPost','forums', 'users', 'files', 'upload', 'emailList'); 
+	public $pages = array('index', 'blogs', 'newBlogPost','forums', 'forumPosts', 'users', 'files', 'upload', 'emailList'); 
 	
 	public function __construct() {
 		parent::__construct();
@@ -120,6 +123,26 @@ class Admin_Controller extends Template_Controller {
 
 		$this->tpl->forums = ORM::factory('forum')->find_all();
 	} // function forums
+	
+	public function forumPostDelete($postId = null) {
+		ORM::factory('forum_post', $postId)->delete();
+		$this->message('forum.postDeleted');
+		url::redirect('admin/forumPosts');
+	} // function forumPostDelete
+	
+	public function forumPosts() {
+		
+		$this->tpl->posts = ORM::factory('forum_post')
+			->limit(self::forumPostsPerPage, $this->_getOffset(self::forumPostsPerPage))
+			->orderBy('timeCreated', 'desc')
+			->find_all();
+			
+		$this->tpl->pagination = new Pagination(array(
+			'total_items' => ORM::factory('forum_post')->count_all(),
+			'items_per_page' => self::forumPostsPerPage,
+		));
+		
+	} // function forumPosts
 	
 	public function index() {
 	} // function index
