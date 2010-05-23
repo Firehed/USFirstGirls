@@ -30,11 +30,11 @@ class File_Model extends ORM {
 		return file_put_contents($this->filesystemPath, $this->data);
 	} // function cache
 
-	public function delete() {
+	public function delete($id = null) {
 		if (file_exists($this->filesystemPath)) {
 			unlink($this->filesystemPath);
 		}
-		return parent::delete();
+		return parent::delete($id);
 	} // function delete	
 
 	private function fileExists($fileName) {
