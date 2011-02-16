@@ -6,6 +6,7 @@ class Profile_Controller extends Template_Controller {
 			url::redirect('');
 		}
 		$this->tpl->user = $this->user;
+		$this->tpl->team = $this->user->team;
 	} // function index
 
 	public function edit() {

@@ -34,14 +34,14 @@ class Session_Controller extends Template_Controller {
 	public function signup() {
 		if (form::valid()) {
 			$user = new User_Model;
-			$user->email       = $this->input->post('email');
-			$user->team_number = $this->input->post('teamNumber');
-			$user->password    = $this->input->post('password');
+			$user->email    = $this->input->post('email');
+			$user->password = $this->input->post('password');
 			
-			if ($user->add(ORM::factory('role', 'login')) AND $user->save()) {
+			if ($user->add(ORM::factory('role', 'login')) && $user->save()) {
 				$this->auth->login($this->input->post('email'), $this->input->post('password'));
 				$this->message('session.signup');
-				url::redirect('team/edit');
+//				url::redirect('team/edit');
+				url::redirect('profile/edit');
 			}
 			else {
 				$this->error($user->exceptions);
