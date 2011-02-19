@@ -1,6 +1,11 @@
 <?php
 class form extends form_Core {
 	protected static $count = 0;
+
+	public static function checkbox($label, $name, $checked = false) {
+		$value = $checked ? '1" checked="checked' : '1';
+		return self::hidden($name, '0') . self::input($label, $name, $value, null, null, 'checkbox');
+	}
 	
 	public static function close() {
 		return form::csrf() . '</fieldset></form>';

@@ -67,7 +67,10 @@ class User_Model extends ORM {
 	);
 	
 	protected $belongs_to = array(
-		'team'
+		'team',
+	);
+	protected $has_one = array(
+		'profile_2011',
 	);
 	
 	protected $foreign_key = array(

@@ -13,21 +13,28 @@ class Profile_Controller extends Template_Controller {
 			$this->error('profile.edit');
 			url::redirect('');
 		}
+		else {
+			$profile = $this->user->profile_2011;
+		}
 		
 		if (form::valid()) {
-			$this->user->team_number = $this->input->post('teamNumber');
-			$this->user->name        = $this->input->post('name');
-			if ($this->user->save()) {
-				$this->message('profile.edit');
+			foreach ($this->input->post() as $k => $v) {
+				if (substr($k, 0, 8) == 'profile_') {
+					$prop = substr($k, 8);
+					$profile->$prop = $v;
+				}
+			}
+			if ($profile->save()) {
+				$this->message('woot');
 				url::redirect('profile');
 			}
 			else {
-				$this->error($this->user->exceptions);
+				$this->error('fail');
 			}
 		}
 
 		$this->tpl->user = $this->user;
-		$this->tpl->team = $this->user->team;
+		$this->tpl->profile = $profile;
 	} // function edit
 	
 } // class Profile_Controller

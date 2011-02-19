@@ -35,6 +35,21 @@ $lang = array(
 		'nickname' => 'Nickname',
 		'no' => 'No',
 		'password' => 'Password',
+		'profile' => array(
+			'age'            => 'Age',
+			'ethnicity'      => 'Ethnicity',
+			'female_mentors' => 'Female mentors on your team',
+			'join_idea'      => 'Ideas you\'ve had to get girls involved in STEM',
+			'new_girls'      => 'Girls new to the team this year',
+			'share_with_swe' => 'By checking this box, I give permission to share this information with <abbr title="Society of Women Engineers">SWE</abbr> and/or FIRST',
+			'team_number'    => 'FIRST Team Number',
+			'total_girls'    => 'Total girls on your team',
+			'total_mentors'  => 'Number of mentors on your team',
+			'total_students' => 'Total students on your team',
+			'yog'            => 'Year of HS graduation',
+			'zip'            => 'ZIP code',
+
+		),
 		'signin' => 'Sign In',
 		'signup' => 'Sign Up',
 		'register' => array(
