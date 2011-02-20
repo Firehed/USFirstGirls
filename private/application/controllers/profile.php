@@ -15,6 +15,9 @@ class Profile_Controller extends Template_Controller {
 		}
 		else {
 			$profile = $this->user->profile_2011;
+			if (!$profile->loaded) {
+				$profile->user_id = $this->user->id;
+			}
 		}
 		
 		if (form::valid()) {
