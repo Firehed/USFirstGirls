@@ -13,7 +13,7 @@ class Profile_2011_Model extends ORM {
 		4 => 'Hispanic/Latino',
 		5 => 'Native Hawaiian/Pacific Islander',
 		6 => 'White',
-		7 => 'Other',
+		7 => 'Two or more races',
 	);
 
 }
