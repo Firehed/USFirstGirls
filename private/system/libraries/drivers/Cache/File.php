@@ -98,7 +98,7 @@ class Cache_File_Driver implements Cache_Driver {
 			$lifetime += time();
 		}
 
-		if ( ! empty($tags))
+		if ( is_array($tags))
 		{
 			// Convert the tags into a string list
 			$tags = implode('+', $tags);
