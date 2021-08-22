@@ -1,0 +1,15 @@
+<?=form::open()?>
+<?=form::input('profile.team_number',    'profile_team_number',    $profile->team_number)?>
+<?=form::input('profile.zip',            'profile_zip',            $profile->zip)?>
+<?=form::input('profile.age',            'profile_age',            $profile->age)?>
+<?=form::input('profile.yog',            'profile_yog',            $profile->yog)?>
+<?=form::input('profile.new_girls',      'profile_new_girls',      $profile->new_girls)?>
+<?=form::input('profile.total_girls',    'profile_total_girls',    $profile->total_girls)?>
+<?=form::input('profile.total_students', 'profile_total_students', $profile->total_students)?>
+<?=form::input('profile.female_mentors', 'profile_female_mentors', $profile->female_mentors)?>
+<?=form::input('profile.total_mentors',  'profile_total_mentors',  $profile->total_mentors)?>
+<?=form::dropdown('profile.ethnicity',   'profile_ethnicity',      Profile_2011_Model::$ethnicity, $profile->ethnicity)?>
+<?=form::textarea('profile.join_idea',   'profile_join_idea',      $profile->join_idea)?>
+<?=form::checkbox('profile.share_with_swe','profile_share_with_swe',$profile->share_with_swe)?>
+<?=form::submit('save')?>
+<?=form::close()?>
